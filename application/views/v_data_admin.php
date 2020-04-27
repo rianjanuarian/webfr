@@ -47,7 +47,7 @@
         </button>
     </div>
     <div class="modal-body">
-        <form action="<?php echo base_url(). 'data_barang/aksi_tambah';?>" method="post">
+        <form action="<?php echo base_url(). 'data_admin/aksi_tambah';?>" method="post">
             <div class="form-group">
                 <label for="nama_admin">Nama Admin</label>
                 <input type="text" name="nama_admin" id="nama_admin" class="form-control">
