@@ -11,11 +11,11 @@ class Model_admin extends CI_Model{
     }
     public function edit_admin($where, $table)
     {
-        return $this->db->get_where($tabel, $where);
+        return $this->db->get_where($table, $where);
     }
     public function update_admin($where,$data, $table)
     {
         $this->db->where($where);
-        $this->db->update($tabel, $data);
+        $this->db->update($table, $data);
     }
 }

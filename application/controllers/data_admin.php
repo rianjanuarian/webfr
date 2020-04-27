@@ -28,9 +28,9 @@ class Data_admin extends CI_Controller{
         redirect('data_admin/index');
     }
 
-    public function edit($nik)  
+    public function edit($id)  
     {
-        $where = array('nik' =>$nik);
+        $where = array('id_admin' =>$id);
         $data['admin'] = $this->model_admin->edit_admin($where, 'admin')->result();
         $this->load->view('templates/header');
         $this->load->view('templates/sidebar');
