@@ -8,7 +8,7 @@
 
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-        <div class="sidebar-brand-icon rotate-n-15">
+        <div class="sidebar-brand-icon">
         <i class="far fa-building"></i>
         </div>
         <div class="sidebar-brand-text mx-3">SIPELITA</div>
@@ -49,6 +49,12 @@
         <a class="nav-link" href="<?php echo base_url('data_penginapan')?>">
         <i class="fas fa-hotel"></i>
         <span>Penginapan</span></a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="<?php echo base_url('data_transportasi')?>">
+        <i class="fas fa-bus"></i>
+        <span>Transaksi</span></a>
     </li>
 
     <li class="nav-item">

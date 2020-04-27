@@ -26,13 +26,13 @@
                     <div class="btn btn-success btn-sm"> 
                         <i class="fas fa-search-plus"></i>
                     </div>
-        
-                    <div class="btn btn-primary btn-sm">
-                    <i class="fa fa-edit"></i>
-                    </div>
+                </td>
+                <td>
+                    <?php echo anchor('data_admin/edit' .$adm->nik, '<div class="btn btn-primary btn-sm">
+                    <i class="fa fa-edit"></i></div>')?>
                 </td>
             </tr>
-<?php endforeach;?>    
+<?php endforeach; ?>    
     </table>
 </div>
 
