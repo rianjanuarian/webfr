@@ -30,5 +30,5 @@
             <button type="submit" class="btn btn-primary btn-sm">SIMPAN</button>
 
         </form>
-    <?php ?>
+    <?php endforeach; ?>
 </div>

@@ -46,7 +46,7 @@
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="<?php echo base_url('data_penginapan')?>">
+        <a class="nav-link" href="<?php echo base_url('dt_penginapan')?>">
         <i class="fas fa-hotel"></i>
         <span>Penginapan</span></a>
     </li>

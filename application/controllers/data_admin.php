@@ -31,7 +31,7 @@ class Data_admin extends CI_Controller{
     public function edit($nik)  
     {
         $where = array('nik' =>$nik);
-        $data['admin'] = $this->model_admin->edit_admin($where, 'admin')->result();
+        $data['admin'] = $this->model_admin->edit_admin($where, 'admin')->result(); 
         $this->load->view('templates/header');
         $this->load->view('templates/sidebar');
         $this->load->view('edit_admin' , $data);
