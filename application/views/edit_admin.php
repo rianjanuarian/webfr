@@ -27,7 +27,7 @@
                 <input type="password" name="password" class="form-control" value="<?php echo $adm->password ?>">
             </div>
 
-            <button type="submit" class="btn btn-primary btn-sm">SIMPAN</button>
+            <button type="submit" class="btn btn-primary btn-sm mt-3">SIMPAN</button>
 
         </form>
     <?php endforeach; ?>

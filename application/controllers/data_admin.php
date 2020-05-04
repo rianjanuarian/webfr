@@ -61,4 +61,10 @@ class Data_admin extends CI_Controller{
         $this->model_admin->update_admin($where, $data, 'admin');
         redirect('data_admin/index');
     }
+    public function hapus($id_admin)
+    {       
+        $where = array('id_admin' => $id_admin);
+        $this->model_admin->hapus_admin($where, 'admin');
+        redirect('data_admin/index');
+    }
 }
