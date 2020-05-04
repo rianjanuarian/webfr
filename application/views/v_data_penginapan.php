@@ -16,21 +16,20 @@
             <th>Aksi</th>
         </tr>
 
-        <?php $no=1; foreach($penginapan as $brg): ?>
+        <?php $no=1; foreach($penginapan as $inap): ?>
             <tr>
             <td><?php echo $no++ ?></td>
-            <td><?php echo $brg->nama_hotel ?></td> <!--menampilkan data barang-->
-            <td><?php echo $brg->alamat_hotel ?></td>
-            <td><?php echo $brg->gambar_hotel ?></td>
-            <td><?php echo $brg->fasilitas_hotel ?></td>
-            <td><?php echo $brg->harga_hotel ?></td>
+            <td><?php echo $inap->nama_hotel ?></td> <!--menampilkan data barang-->
+            <td><?php echo $inap->alamat_hotel ?></td>
+            <td><?php echo $inap->gambar_hotel ?></td>
+            <td><?php echo $inap->fasilitas_hotel ?></td>
+            <td><?php echo $inap->harga_hotel ?></td>
                 <td>
                     <div class="btn btn-success btn-sm"> 
                         <i class="fas fa-search-plus"></i>
                     </div>
-                </td>
-                <td>
-                    <?php echo anchor('dt_penginapan/edit' .$brg->id_hotel, '<div class="btn btn-primary btn-sm">
+                
+                    <?php echo anchor('data_penginapan/edit' .$inap->id_hotel, '<div class="btn btn-primary btn-sm">
                     <i class="fa fa-edit"></i></div>')?>
                 </td>
             </tr>

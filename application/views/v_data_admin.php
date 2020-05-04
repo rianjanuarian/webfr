@@ -23,13 +23,11 @@
                 <td><?= $adm->username_admin ?></td>
                 <td><?= $adm->password ?></td>
                 <td>
-                    <div class="btn btn-success btn-sm"> 
-                        <i class="fas fa-search-plus"></i>
-                    </div>
+                <?php echo anchor('data_admin/edit/' .$adm->id_admin, '<div class="btn btn-primary btn-sm">
+                    <i class="fa fa-edit"></i></div>')?>
         
-                    <div class="btn btn-primary btn-sm">
-                    <i class="fa fa-edit"></i>
-                    </div>
+                    <?php echo anchor('data_admin/hapus/' .$adm->id_admin, '<div class="btn btn-danger btn-sm">
+                    <i class="fa fa-trash"></i></div>')?>
                 </td>
             </tr>
 <?php endforeach;?>    
@@ -47,7 +45,7 @@
         </button>
     </div>
     <div class="modal-body">
-        <form action="<?php echo base_url(). 'data_barang/aksi_tambah';?>" method="post">
+        <form action="<?php echo base_url(). 'data_admin/aksi_tambah';?>" method="post">
             <div class="form-group">
                 <label for="nama_admin">Nama Admin</label>
                 <input type="text" name="nama_admin" id="nama_admin" class="form-control">

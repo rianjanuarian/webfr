@@ -8,7 +8,7 @@ class Data_penginapan extends CI_Controller{
     
     public function index() // membuat fungsi index yang akan diakses saat controller dijalankan
     {
-        $data['hotel']= $this->model_penginapan->tampil_data()->result(); // memanggil model barang dan fungsi tampil data
+        $data['penginapan']= $this->model_penginapan->tampil_data()->result(); // memanggil model barang dan fungsi tampil data
         $this->load->view('templates/header');
         $this->load->view('templates/sidebar');
         $this->load->view('v_data_penginapan' , $data);
