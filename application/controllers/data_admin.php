@@ -28,10 +28,15 @@ class Data_admin extends CI_Controller{
         redirect('data_admin/index');
     }
 
-    public function edit($nik)  
+    public function edit($id_admin)  
     {
+<<<<<<< HEAD
         $where = array('nik' =>$nik);
         $data['admin'] = $this->model_admin->edit_admin($where, 'admin')->result(); 
+=======
+        $where = array('id_admin' =>$id_admin);
+        $data['admin'] = $this->model_admin->edit_admin($where, 'admin')->result();
+>>>>>>> 5e1d59f5bed7317730e26236749666f281a15fad
         $this->load->view('templates/header');
         $this->load->view('templates/sidebar');
         $this->load->view('edit_admin' , $data);
@@ -40,7 +45,7 @@ class Data_admin extends CI_Controller{
 
     public function update_admin()
     {
-        $id_admin =$this->input->post('id');
+        $id_admin =$this->input->post('id_admin');
         $nama_admin =$this->input->post('nama_admin');
         $nik =$this->input->post('nik');
         $username_admin =$this->input->post('username_admin');
@@ -55,10 +60,16 @@ class Data_admin extends CI_Controller{
         );
 
         $where = array(
-            'nik' => $nik
+            'id_admin' => $id_admin
         );
 
         $this->model_admin->update_admin($where, $data, 'admin');
+        redirect('data_admin/index');
+    }
+    public function hapus($id_admin)
+    {       
+        $where = array('id_admin' => $id_admin);
+        $this->model_admin->hapus_admin($where, 'admin');
         redirect('data_admin/index');
     }
 }

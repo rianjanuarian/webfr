@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <h3><i class="fas fa-edit">EDIT DATA ADMIN</i></h3>
-    <?php foreach($admin as $adm: ?>
+    <?php foreach($admin as $adm): ?>
         <form method="post" action="<?php echo base_url().'data_admin/update_admin'?>">
             <div class="for-group">
                 <label>ID ADMIN</label>
@@ -27,7 +27,7 @@
                 <input type="password" name="password" class="form-control" value="<?php echo $adm->password ?>">
             </div>
 
-            <button type="submit" class="btn btn-primary btn-sm">SIMPAN</button>
+            <button type="submit" class="btn btn-primary btn-sm mt-3">SIMPAN</button>
 
         </form>
     <?php endforeach; ?>

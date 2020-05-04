@@ -132,6 +132,10 @@ $autoload['language'] = array();
 |
 |	$autoload['model'] = array('first_model' => 'first');
 */
+<<<<<<< HEAD
 $autoload['model'] = array('model_admin');
 $autoload['model'] = array('model_hotel');
 
+=======
+$autoload['model'] = array('model_admin', 'model_auth');
+>>>>>>> 5e1d59f5bed7317730e26236749666f281a15fad
