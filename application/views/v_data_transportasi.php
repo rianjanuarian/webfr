@@ -22,8 +22,7 @@
                 <td><?php echo $trnsprt->nama_transport?></td>
                 <td><?php echo $trnsprt->alamat_transport?></td>
                 <td>
-                    <?php echo $trnsprt->gambar_transport?>
-                    <img src="<?php echo base_url(); ?>assets/transportasi<?php echo $trnsprt->gambar_transport; ?>" width="70" height="90">
+                <img src="<?php echo base_url() ?>assets/transport/<?php echo $trnsprt->gambar_transport; ?>" width="70" height="90">
                 </td>
                 <td><?php echo $trnsprt->kapasitas_transport?></td>
                 <td><?php echo $trnsprt->harga_transport?></td>

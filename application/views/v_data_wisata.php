@@ -22,7 +22,9 @@
                 <td><?php echo $no++ ?></td>
                 <td><?php echo $wst->nama_wisata ?></td>
                 <td><?php echo $wst->alamat_wisata ?></td>
-                <td><?php echo $wst->gambar_wisata ?></td>
+                <td>
+                <img src="<?php echo base_url() ?>assets/wisata/<?php echo $wst->gambar_wisata; ?>" width="70" height="90">
+                </td>
                 <td><?php echo $wst->harga_tiket ?></td>
                 <td>
                     <?php echo anchor('data_wisata/edit/' .$wst->id_wisata, '<div class="btn btn-primary btn-sm">

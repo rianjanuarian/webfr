@@ -14,8 +14,8 @@ class Data_transportasi extends CI_Controller{
         $nama_transport     = $this->input->post('nama_transport');
         $alamat_transport   = $this->input->post('alamat_transport');
         $gambar_transport   = $_FILES['gambar_transport'];
-        if ($gambar_transport=''){}else{
-            $config['upload_path']='./assets/transportasi/';
+        if($gambar_transport=''){}else{
+            $config['upload_path']='./assets/transport/';
             $config['allowed_types']='jpg|jpeg|png';
             $this->load->library('upload');
             $this->upload->initialize($config);
