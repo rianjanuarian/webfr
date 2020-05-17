@@ -75,9 +75,8 @@
     <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal">BATAL</button>
         <button type="submit" class="btn btn-primary">TAMBAH</button>
-        <?php echo form_close();?>
     </div>
-    
+    <?php echo form_close();?>
     </div>
 </div>
 </div>
