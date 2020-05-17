@@ -9,5 +9,10 @@ class Model_transportasi extends CI_Model{
     {
         $this->db->insert($table, $data);
     }
+    public function hapus_transport($where, $table)
+    {
+        $this->db->where($where);
+        $this->db->delete($table);
+    }
 
 }

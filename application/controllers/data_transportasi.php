@@ -39,4 +39,10 @@ class Data_transportasi extends CI_Controller{
         $this->model_transportasi->tambah_transportasi($data, 'transport');
         redirect('data_transportasi/index');
     }
+    public function hapus($id_transport)
+    {
+        $where  = array('id_transport' =>$id_transport);
+        $this->model_transportasi->hapus_transport($where, 'transport');
+        redirect('data_transportasi/index');
+    }
 }
