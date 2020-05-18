@@ -21,7 +21,9 @@
             <td><?php echo $no++ ?></td>
             <td><?php echo $inap->nama_hotel ?></td> <!--menampilkan data barang-->
             <td><?php echo $inap->alamat_hotel ?></td>
-            <td><?php echo $inap->gambar_hotel ?></td>
+            <td>
+            <img src="<?php echo base_url() ?>assets/hotel/<?php echo $inap->gambar_hotel; ?>" width="70" height="90">
+            </td>
             <td><?php echo $inap->fasilitas_hotel ?></td>
             <td><?php echo $inap->harga_hotel ?></td>
                 <td>
@@ -29,8 +31,11 @@
                         <i class="fas fa-search-plus"></i>
                     </div>
                 
-                    <?php echo anchor('data_penginapan/edit' .$inap->id_hotel, '<div class="btn btn-primary btn-sm">
+                    <?php echo anchor('data_penginapan/edit/' .$inap->id_hotel, '<div class="btn btn-primary btn-sm">
                     <i class="fa fa-edit"></i></div>')?>
+
+                    <?php echo anchor('data_penginapan/hapus/' .$inap->id_hotel, '<div class="btn btn-danger btn-sm">
+                    <i class="fa fa-trash"></i></div>')?>
                 </td>
             </tr>
 <?php endforeach; ?>    
@@ -48,26 +53,26 @@
         </button>
     </div>
     <div class="modal-body">
-        <form action="<?php echo base_url(). 'dt_penginapan/aksi_tambah';?>" method="post">
+    <?php echo form_open_multipart('data_penginapan/tambah_aksi'); ?>
             <div class="form-group">
-                <label for="nama_pngin">Nama Hotel</label>
+                <label for="nama_hotel">Nama Hotel</label>
                 <input type="text" name="nama_hotel" id="nama_hotel" class="form-control">
             </div>
             <div class="form-group">
-                <label for="nik">Alamat Hotel</label>
+                <label for="alamat_hotel">Alamat Hotel</label>
                 <input type="text" name="alamat_hotel" id="alamat_hotel" class="form-control">
             </div>    
             <div class="form-group">
-                <label for="username">Gambar Hotel</label>
-                <input type="file" name="gambar_hotel" id="gambar" class="form-control">
+                <label for="gambar_hotel">Gambar Hotel</label>
+                <input type="file" name="gambar_hotel" id="gambar_hotel" class="form-control">
             </div>
             <div class="form-group">
-                <label for="password">Fasilitas Hotel</label>
-                <input type="text" name="fasilitas_hotel" id="fasilitas" class="form-control">
+                <label for="fasilitas_hotel">Fasilitas Hotel</label>
+                <input type="text" name="fasilitas_hotel" id="fasilitas_hotel" class="form-control">
             </div>
             <div class="form-group">
-                <label for="password">Harga Hotel</label>
-                <input type="text" name="harga_hotel" id="harga" class="form-control">
+                <label for="harga_hotel">Harga Hotel</label>
+                <input type="text" name="harga_hotel" id="harga_hotel" class="form-control">
             </div>
         
     </div>
@@ -75,7 +80,7 @@
         <button type="button" class="btn btn-danger" data-dismiss="modal">BATAL</button>
         <button type="submit" class="btn btn-primary">TAMBAH</button>
     </div>
-    </form>
+    <?php echo form_close(); ?>
     </div>
 </div>
 </div>
