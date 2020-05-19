@@ -13,7 +13,7 @@ class Model_penginapan extends CI_Model{
       $this->db->where($where);
       $this->db->update($table,$data);
   }
-  function hapus_data($where,$table){ // mengedit data dengan menyeleksi query untuk mengedit data		
+  public function hapus_data($where,$table){ // mengedit data dengan menyeleksi query untuk mengedit data		
       $this->db->where($where);
       $this->db->delete($table);
   }

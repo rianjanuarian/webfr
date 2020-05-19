@@ -17,26 +17,28 @@ class Data_penginapan extends CI_Controller{
     public function tambah_aksi() // membuat fungsi
     {
         $nama_hotel       =$this->input->post('nama_hotel'); // menangkap hasil inputan dari form
-        $alamat_hotel       =$this->input->post('alamat_hotel'); // menangkap hasil inputan dari form
-        $fasilitas       =$this->input->post('fasilitas'); // menangkap hasil inputan dari form
-        $harga_hotel       =$this->input->post('harga_hotel'); // menangkap hasil inputan dari form
-        $gambar     =$_FILES['gambar']['name']; // menangkap hasil inputan dari form
-        if ($gambar=''){}else {
-            $config ['upload_path']='./upload';
-            $config ['allowed_types']='jpg|jpeg|png|gift';
+        $alamat_hotel     =$this->input->post('alamat_hotel'); // menangkap hasil inputan dari form
+        $gambar_hotel     =$_FILES['gambar_hotel']; // menangkap hasil inputan dari form
+        if ($gambar_hotel=''){}else {
+            $config ['upload_path']='./assets/hotel/';
+            $config ['allowed_types']='jpg|jpeg|png';
+            $this->load->library('upload');
+            $this->upload->initialize($config);
 
-            $this->load->library('upload', $config);
-            if (!$this->upload->do_upload('gambar')){
-                echo "Gambar Gagal!";
+            if (!$this->upload->do_upload('gambar_hotel')){
+                echo "Gambar Gagal Terupload!"; die();
             }else {
-                $gambar=$this->upload->data('file_name');
+                $gambar_hotel=$this->upload->data('file_name');
             }
-        }
+        
+        $fasilitas_hotel  =$this->input->post('fasilitas_hotel'); // menangkap hasil inputan dari form
+        $harga_hotel      =$this->input->post('harga_hotel'); // menangkap hasil inputan dari form
+}
         $data=array( // memasukkan data inputan kedalam array
-            'nama_hotel'          =>$nama_hotel, 
-            'alamat_hotel'          =>$alamat_hotel,
-            'gambar_hotel'          =>$gambar,
-            'fasilitas_hotel'          =>$fasilitas,
+            'nama_hotel'           =>$nama_hotel, 
+            'alamat_hotel'         =>$alamat_hotel,
+            'gambar_hotel'         =>$gambar_hotel,
+            'fasilitas_hotel'      =>$fasilitas_hotel,
             'harga_hotel'          =>$harga_hotel
         );
         $this->model_penginapan->tambah_penginapan($data, 'penginapan'); // memanggil model barang dengan fungsi tambah barang , memasukkan array ke dalam tabel tb_barang
@@ -51,16 +53,16 @@ class Data_penginapan extends CI_Controller{
             $this->load->view('templates/footer');
         }
         public function update(){ //membuat fungsi update
-            $id         = $this->input->post('id_hotel'); // menangkap hasil inputan dari form
-            $nama_hotel         = $this->input->post('nama_hotel'); // menangkap hasil inputan dari form
-            $alamat_hotel         = $this->input->post('alamat_hotel'); // menangkap hasil inputan dari form
-            $fasilitas         = $this->input->post('fasilitas_hotel'); // menangkap hasil inputan dari form
-            $harga         = $this->input->post('harga_hotel'); // menangkap hasil inputan dari form
+            $id              = $this->input->post('id_hotel'); // menangkap hasil inputan dari form
+            $nama_hotel      = $this->input->post('nama_hotel'); // menangkap hasil inputan dari form
+            $alamat_hotel    = $this->input->post('alamat_hotel'); // menangkap hasil inputan dari form
+            $fasilitas_hotel = $this->input->post('fasilitas_hotel'); // menangkap hasil inputan dari form
+            $harga           = $this->input->post('harga_hotel'); // menangkap hasil inputan dari form
            
             $data=array( // memasukkan data inputan kedalam array
                 'nama_hotel'          =>$nama_hotel, 
                 'alamat_hotel'          =>$alamat_hotel,
-                'fasilitas_hotel'          =>$fasilitas,
+                'fasilitas_hotel'          =>$fasilitas_hotel,
                 'harga_hotel'          =>$harga_hotel
             
             );
@@ -70,8 +72,8 @@ class Data_penginapan extends CI_Controller{
             $this->model_penginapan->update_data($where,$data,'penginapan'); // memanggil model barang dengan fungsi update data , memasukkan array ke dalam tabel tb_barang
             redirect('data_penginapan/index');
         }
-        function hapus($id){ // menghapus data dengan menyeleksi query untuk menghapus record
-           $where=array('id_hotel'=>$id);
+        function hapus($id_hotel){ // menghapus data dengan menyeleksi query untuk menghapus record
+           $where=array('id_hotel'=>$id_hotel);
            $this->model_penginapan->hapus_data($where, 'penginapan'); // memanggil mode barang dengan fungsi hapus data berdasarkan id pada tb_barang
            redirect('data_penginapan/index');
         }
