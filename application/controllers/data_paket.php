@@ -3,7 +3,7 @@
 class Data_paket extends CI_Controller{
     public function index()
     {
-        $data['paket'] = $this->model_paket->tampil_paket()->result();
+        $data['katalog'] = $this->model_paket->tampil_paket()->result();
         $this->load->view('templates/header');
         $this->load->view('templates/sidebar');
         $this->load->view('v_data_paket' , $data);
@@ -25,14 +25,14 @@ class Data_paket extends CI_Controller{
             'harga_katalog'          => $harga_katalog
         );
 
-        $this->model_paket->tambah_paket($data, 'paket');
+        $this->model_paket->tambah_paket($data, 'katalog');
         redirect('data_paket/index');
     }
 
     public function edit($id_katalog)  
     {
         $where = array('id_katalog' =>$id_katalog);
-        $data['paket'] = $this->model_paket->edit($where, 'paket')->result();
+        $data['katalog'] = $this->model_paket->edit($where, 'katalog')->result();
         $this->load->view('templates/header');
         $this->load->view('templates/sidebar');
         $this->load->view('edit_paket' , $data);
@@ -52,7 +52,7 @@ class Data_paket extends CI_Controller{
             'id_katalog'          => $id_katalog,
             'nama_katalog'        => $nama_katalog,
             'id_transport'               => $id_transport,
-            'id_hotel'    => $id_hotel,
+            'id_hotel'           => $id_hotel,
             'id_wisata'          => $id_wisata,
             'harga_katalog'          => $harga_katalog
         );
@@ -61,15 +61,16 @@ class Data_paket extends CI_Controller{
             'id_katalog' => $id_katalog
         );
 
-        $this->model_paket->update_paket($where, $data, 'paket');
+        $this->model_paket->update_paket($where, $data, 'katalog');
         redirect('data_paket/index');
     }
 
     public function hapus($id_katalog)
     {
         $where = array('id_katalog' =>$id_katalog);
-        $this->model_paket->hapus_paket($where, 'paket');
+        $this->model_paket->hapus_paket($where, 'katalog');
         redirect('data_paket/index');
     }
+    
 }
 

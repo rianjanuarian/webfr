@@ -1,6 +1,6 @@
 <?php
 
-class Model_penginapan extends CI_Model{
+class Model_hotel extends CI_Model{
     public function tampil_penginapan()
     {
         return $this->db->get('penginapan');
