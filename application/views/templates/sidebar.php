@@ -63,6 +63,12 @@
         <span>Wisata</span></a>
     </li>
 
+    <li class="nav-item">
+        <a class="nav-link" href="<?php echo base_url('data_pesanan')?>">
+        <i class="fas fa-torii-gate"></i>
+        <span>Transaksi</span></a>
+    </li>
+
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
 
