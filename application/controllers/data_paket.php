@@ -20,7 +20,7 @@ class Data_paket extends CI_Controller{
         $data = array(
             'nama_katalog'        => $nama_katalog,
             'id_transport'               => $id_transport,
-            'id_hotel'    => $id_hotel,
+            'id_hotel'            => $id_hotel,
             'id_wisata'          => $id_wisata,
             'harga_katalog'          => $harga_katalog
         );
@@ -51,7 +51,7 @@ class Data_paket extends CI_Controller{
         $data=array(
             'id_katalog'          => $id_katalog,
             'nama_katalog'        => $nama_katalog,
-            'id_transport'               => $id_transport,
+            'id_transport'        => $id_transport,
             'id_hotel'           => $id_hotel,
             'id_wisata'          => $id_wisata,
             'harga_katalog'          => $harga_katalog
