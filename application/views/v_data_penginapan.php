@@ -4,8 +4,9 @@
             Tambah Penginapan
         </i>
     </button>
+    <?php echo $this->session->flashdata('pesan') ?>
 
-    <table class="table table-bordered">
+    <table class="table table-striped table-bordered ">
         <tr>
             <th>NO</th>
             <th>Nama Hotel</th>
@@ -18,20 +19,16 @@
 
         <?php $no=1; foreach($penginapan as $inap): ?>
             <tr>
-            <td><?php echo $no++ ?></td>
-            <td><?php echo $inap->nama_hotel ?></td> <!--menampilkan data barang-->
-            <td><?php echo $inap->alamat_hotel ?></td>
-            <td>
-            <img src="<?php echo base_url() ?>assets/hotel/<?php echo $inap->gambar_hotel; ?>" width="70" height="90">
-            </td>
-            <td><?php echo $inap->fasilitas_hotel ?></td>
-            <td><?php echo $inap->harga_hotel ?></td>
+                <td><?php echo $no++ ?></td>
+                <td><?php echo $inap->nama_hotel ?></td> 
+                <td><?php echo $inap->alamat_hotel ?></td>
                 <td>
-                    <div class="btn btn-success btn-sm"> 
-                        <i class="fas fa-search-plus"></i>
-                    </div>
-                
-                    <?php echo anchor('data_penginapan/edit/' .$inap->id_hotel, '<div class="btn btn-primary btn-sm">
+                    <img src="<?php echo base_url() ?>assets/hotel/<?php echo $inap->gambar_hotel; ?>" width="60px">
+                </td>
+                <td><?php echo $inap->fasilitas_hotel ?></td>
+                <td><?php echo $inap->harga_hotel ?></td>
+                <td>
+                    <?php echo anchor('data_penginapan/edit_penginapan/' .$inap->id_hotel, '<div class="btn btn-primary btn-sm">
                     <i class="fa fa-edit"></i></div>')?>
 
                     <?php echo anchor('data_penginapan/hapus/' .$inap->id_hotel, '<div class="btn btn-danger btn-sm">
