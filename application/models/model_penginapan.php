@@ -3,15 +3,21 @@ class Model_penginapan extends CI_Model{
     public function tampil_data(){
           return $this->db->get('penginapan'); // memanggil dari database tabel tb_barang
     }
+
+    public function tampil_data2($where)
+    {
+        return $this->db->get('penginapan', $where);
+    }
+
     public function tambah_penginapan($data, $table){ // menjalankan fungsi tambah barang
         $this->db->insert($table, $data); // memasukkan ke database
   }
-  function edit_penginapan($where,$table){ // mengedit data dengan menyeleksi query untuk mengedit data		
+  function edit($where,$table){ // mengedit data dengan menyeleksi query untuk mengedit data		
       return $this->db->get_where($table,$where);
   }
-  function update_data($where,$data,$table){ // mengedit data dengan menyeleksi query untuk mengedit data		
-      $this->db->where($where);
-      $this->db->update($table,$data);
+  public function update_data($table, $data, $where){ // mengedit data dengan menyeleksi query untuk mengedit data		
+    
+    $this->db->update($table,$data, $where);
   }
   public function hapus_data($where,$table){ // mengedit data dengan menyeleksi query untuk mengedit data		
       $this->db->where($where);
