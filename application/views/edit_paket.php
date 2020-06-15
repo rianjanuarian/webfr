@@ -26,6 +26,11 @@
                 <input type="text" name="harga_katalog" class="form-control" value="<?php echo $adm->harga_katalog ?>">
             </div>
 
+            <div class="form-group">
+                <label for="status">Status</label>
+                <input type="text" name="status" class="form-control" value="<?php echo $adm->status ?>">
+            </div>
+
             <button type="submit" class="btn btn-primary btn-sm mt-3">SIMPAN</button>
 
         </form>

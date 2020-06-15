@@ -4,6 +4,9 @@ class Data_paket extends CI_Controller{
     public function index()
     {
         $data['katalog'] = $this->model_paket->tampil_paket()->result();
+        $data['transport'] = $this->model_paket->tampil_paket()->result();
+        $data['penginapan'] = $this->model_paket->tampil_paket()->result();
+        $data['wisata'] = $this->model_paket->tampil_paket()->result();
         $this->load->view('templates/header');
         $this->load->view('templates/sidebar');
         $this->load->view('v_data_paket' , $data);
@@ -12,17 +15,20 @@ class Data_paket extends CI_Controller{
 
     public function aksi_tambah()
     {
-        $nama_katalog     = $this->input->post('nama_katalog');
-        $id_transport            = $this->input->post('id_transport');
-        $id_hotel = $this->input->post('id_hotel');
-        $id_wisata       = $this->input->post('id_wisata');
-        $harga_katalog       = $this->input->post('harga_katalog');
+        $nama_katalog      = $this->input->post('nama_katalog');
+        $id_transport      = $this->input->post('id_transport');
+        $id_hotel          = $this->input->post('id_hotel');
+        $id_wisata         = $this->input->post('id_wisata');
+        $harga_katalog     = $this->input->post('harga_katalog');
+        $status            =$this->input->post('status');
+        
         $data = array(
             'nama_katalog'        => $nama_katalog,
-            'id_transport'               => $id_transport,
+            'id_transport'        => $id_transport,
             'id_hotel'            => $id_hotel,
-            'id_wisata'          => $id_wisata,
-            'harga_katalog'          => $harga_katalog
+            'id_wisata'           => $id_wisata,
+            'harga_katalog'       => $harga_katalog,
+            'status'              => $status
         );
 
         $this->model_paket->tambah_paket($data, 'katalog');
@@ -41,20 +47,22 @@ class Data_paket extends CI_Controller{
 
     public function update_paket()
     {
-        $id_katalog =$this->input->post('id_katalog');
-        $nama_katalog =$this->input->post('nama_katalog');
-        $id_transport =$this->input->post('id_transport');
-        $id_hotel =$this->input->post('id_hotel');
-        $id_wisata =$this->input->post('id_wisata');
-        $harga_katalog       = $this->input->post('harga_katalog');
+        $id_katalog     =$this->input->post('id_katalog');
+        $nama_katalog   =$this->input->post('nama_katalog');
+        $id_transport   =$this->input->post('id_transport');
+        $id_hotel       =$this->input->post('id_hotel');
+        $id_wisata      =$this->input->post('id_wisata');
+        $harga_katalog  = $this->input->post('harga_katalog');
+        $status         = $this->input->post('status');
 
         $data=array(
             'id_katalog'          => $id_katalog,
             'nama_katalog'        => $nama_katalog,
             'id_transport'        => $id_transport,
-            'id_hotel'           => $id_hotel,
-            'id_wisata'          => $id_wisata,
-            'harga_katalog'          => $harga_katalog
+            'id_hotel'            => $id_hotel,
+            'id_wisata'           => $id_wisata,
+            'harga_katalog'       => $harga_katalog,
+            'status'              => $status
         );
 
         $where = array(

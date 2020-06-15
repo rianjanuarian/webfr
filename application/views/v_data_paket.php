@@ -1,18 +1,21 @@
 <div class="container-fluid">
+    
     <button class="btn btn-sm btn-primary mb-3" data-toggle="modal" data-target="#tambah_paket">
         <i class="fas fa-plus fa-sm">
             Tambah paket
         </i>
     </button>
 
+
     <table class="table table-bordered">
         <tr>
             <th>NO</th>
             <th>Nama Paket</th>
-            <th>Id Transportasi</th>
-            <th>Id Hotel</th>
-            <th>Id Wisata</th>
+            <th>ID Transportasi</th>
+            <th>ID Hotel</th>
+            <th>ID Wisata</th>
             <th>Harga Paket</th>
+            <th>Status</th>
             <th>Aksi</th>
         </tr>
 
@@ -24,6 +27,13 @@
                 <td><?= $adm->id_hotel ?></td>
                 <td><?= $adm->id_wisata ?></td>
                 <td><?= $adm->harga_katalog ?></td>
+                <td><?php 
+                    if($adm->status=="0"){
+                        echo "<span class='badge badge-danger'> Tidak Tersedia</span>";
+                    }else{
+                        echo "<span class='badge badge-primary'> Tersedia</span>";
+                    }
+                ?></td>
                 <td>
                 <?php echo anchor('data_paket/edit/' .$adm->id_katalog, '<div class="btn btn-primary btn-sm">
                     <i class="fa fa-edit"></i></div>')?>
@@ -32,16 +42,16 @@
                     <i class="fa fa-trash"></i></div>')?>
                 </td>
             </tr>
-<?php endforeach;?>    
+        <?php endforeach;?>    
     </table>
 </div>
 
-<!-- Modal -->
+<!-- Modal--> 
 <div class="modal fade" id="tambah_paket" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 <div class="modal-dialog" role="document">
     <div class="modal-content">
     <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">TAMBAH paket</h5>
+        <h5 class="modal-title" id="exampleModalLabel">TAMBAH PAKET</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
@@ -53,28 +63,57 @@
                 <input type="text" name="nama_katalog" id="nama_katalog" class="form-control">
             </div>
             <div class="form-group">
-                <label for="id_transport">ID Transportasi</label>
-                <input type="text" name="id_transport" id="id_transport" class="form-control">
+                <label>ID Transportasi</label>
+                <select name="id_transport" class="form-control">
+                    <option>--Pilih Transport--</option>
+                    <?php foreach($transport as $trnsprt):?>
+                        <option value="<?php echo $trnsprt->id_transport ?>">
+                            <?php echo $trnsprt->id_transport ?>
+                        </option>
+                    <?php endforeach;?>
+                </select>
             </div>    
             <div class="form-group">
                 <label for="id_hotel">ID Hotel</label>
-                <input type="text" name="id_hotel" id="id_hotel" class="form-control">
+                <select name="id_hotel" class="form-control">
+                    <option>--Pilih ID Hotel--</option>
+                    <?php foreach($penginapan as $inap):?>
+                        <option value="<?php echo $inap->id_hotel ?>">
+                            <?php echo $inap->id_hotel ?>
+                        </option>
+                    <?php endforeach;?>
+                </select>
             </div>
             <div class="form-group">
                 <label for="id_wisata">ID Wisata</label>
-                <input type="text" name="id_wisata" id="id_wisata" class="form-control">
+                <select name="id_wisata" class="form-control">
+                    <option>--Pilih ID Wisata--</option>
+                    <?php foreach($wisata as $wst):?>
+                        <option value="<?php echo $wst->id_wisata ?>">
+                            <?php echo $wst->id_wisata ?>
+                        </option>
+                    <?php endforeach;?>
+                </select>
             </div>
             <div class="form-group">
                 <label for="harga_katalog">Harga Paket</label>
                 <input type="text" name="harga_katalog" id="harga_katalog" class="form-control">
             </div>
+            <div class="form-group">
+                <label for="status">Status</label>
+                <select name="status" class="form-control">
+                        <option>--Pilih Status--</option>
+                        <option value="1">Tersedia</option>
+                        <option value="0">Tidak Tersedia</option>
+                </select>
+            </div>
         
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">BATAL</button>
+                <button type="submit" class="btn btn-primary">TAMBAH</button>
+            </div>
+        </form>
     </div>
-    <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">BATAL</button>
-        <button type="submit" class="btn btn-primary">TAMBAH</button>
-    </div>
-    </form>
-    </div>
+</div>
 </div>
 </div>
