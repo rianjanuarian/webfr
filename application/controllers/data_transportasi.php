@@ -28,13 +28,15 @@ class Data_transportasi extends CI_Controller{
         }
         $kapasitas_transport= $this->input->post('kapasitas_transport');
         $harga_transport    = $this->input->post('harga_transport');
+        $status_transport   = $this->input->post('status_transport');
 
         $data=array(
             'nama_transport'        => $nama_transport,
             'alamat_transport'      => $alamat_transport,
             'gambar_transport'      => $gambar_transport,
             'kapasitas_transport'   => $kapasitas_transport,
-            'harga_transport'       => $harga_transport
+            'harga_transport'       => $harga_transport,
+            'status_transport'      => $status_transport
         );
         $this->model_transportasi->tambah_transportasi($data, 'transport');
         redirect('data_transportasi/index');

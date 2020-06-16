@@ -3,6 +3,9 @@
 class Model_paket extends CI_Model{
     public function tampil_paket(){
         return $this->db->get('katalog');
+        return $this->db->get('transport');
+        return $this->db->get('penginapan');
+        return $this->db->get('wisata');
     }
 
     public function tambah_paket($data, $table){       

@@ -2,7 +2,7 @@
     
     <button class="btn btn-sm btn-primary mb-3" data-toggle="modal" data-target="#tambah_paket">
         <i class="fas fa-plus fa-sm">
-            Tambah paket
+            Tambah PAKET
         </i>
     </button>
 
@@ -57,7 +57,7 @@
         </button>
     </div>
     <div class="modal-body">
-        <form action="<?php echo base_url(). 'data_paket/aksi_tambah';?>" method="post">
+        <form action="<?php echo base_url('data_paket/aksi_tambah');?>" method="post">
             <div class="form-group">
                 <label for="nama_katalog">Nama paket</label>
                 <input type="text" name="nama_katalog" id="nama_katalog" class="form-control">
@@ -65,10 +65,10 @@
             <div class="form-group">
                 <label>ID Transportasi</label>
                 <select name="id_transport" class="form-control">
-                    <option>--Pilih Transport--</option>
-                    <?php foreach($transport as $trnsprt):?>
-                        <option value="<?php echo $trnsprt->id_transport ?>">
-                            <?php echo $trnsprt->id_transport ?>
+                    <option value="">--Pilih Transport--</option>
+                    <?php foreach($transport as $sport):?>
+                        <option value="<?php echo $sport->id_transport; ?>">
+                            <?php echo $sport->id_transport; ?>
                         </option>
                     <?php endforeach;?>
                 </select>

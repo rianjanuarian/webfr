@@ -13,6 +13,7 @@
             <th>Gambar</th>
             <th>Kapasitas</th>
             <th>Harga</th>
+            <th>Status</th>
             <th>Aksi</th>
         </tr>
     
@@ -26,6 +27,7 @@
                 </td>
                 <td><?php echo $trnsprt->kapasitas_transport?></td>
                 <td><?php echo $trnsprt->harga_transport?></td>
+                <td><?php echo $trnsprt->status_transport?></td>
                 <td>
                     <?php echo anchor('data_transportasi/edit/' .$trnsprt->id_transport, '<div class="btn btn-primary btn-sm">
                         <i class="fa fa-edit"></i></div>')?>

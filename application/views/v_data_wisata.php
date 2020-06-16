@@ -14,6 +14,7 @@
             <th>Alamat Wisata</th>
             <th>Gambar Wisata</th>
             <th>Harga Tiket</th>
+            <th>Status</th>
             <th>Aksi</th>
         </tr>
         
@@ -26,6 +27,7 @@
                 <img src="<?php echo base_url() ?>assets/wisata/<?php echo $wst->gambar_wisata; ?>" width="70" height="90">
                 </td>
                 <td><?php echo $wst->harga_tiket ?></td>
+                <td><?php echo $wst->status_wisata?></td>
                 <td>
                     <?php echo anchor('data_wisata/edit/' .$wst->id_wisata, '<div class="btn btn-primary btn-sm">
                         <i class="fa fa-edit"></i>

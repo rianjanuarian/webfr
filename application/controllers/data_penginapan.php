@@ -33,13 +33,15 @@ class Data_penginapan extends CI_Controller{
         
         $fasilitas_hotel  =$this->input->post('fasilitas_hotel'); // menangkap hasil inputan dari form
         $harga_hotel      =$this->input->post('harga_hotel'); // menangkap hasil inputan dari form
+        $status_hotel     =$this->input->post('status_hotel');
 }
         $data=array( // memasukkan data inputan kedalam array
             'nama_hotel'           =>$nama_hotel, 
             'alamat_hotel'         =>$alamat_hotel,
             'gambar_hotel'         =>$gambar_hotel,
             'fasilitas_hotel'      =>$fasilitas_hotel,
-            'harga_hotel'          =>$harga_hotel
+            'harga_hotel'          =>$harga_hotel,
+            'status_hotel'         =>$status_hotel
         );
         $this->model_penginapan->tambah_penginapan($data, 'penginapan'); 
         $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -62,7 +64,7 @@ class Data_penginapan extends CI_Controller{
             $this->load->view('templates/footer');
         }
 
-        public function aksi_update_penginapan()
+        public function aksi_update_penginapan($id_hotel)
         {
             $this->_rules();
             if($this->form_validation->run()==FALSE){
@@ -89,14 +91,16 @@ class Data_penginapan extends CI_Controller{
         
                 $fasilitas_hotel  =$this->input->post('fasilitas_hotel'); // menangkap hasil inputan dari form
                 $harga_hotel      =$this->input->post('harga_hotel'); // menangkap hasil inputan dari form
+                $status_hotel     =$this->input->post('status_hotel');
             }
                 $data=array( // memasukkan data inputan kedalam array
                     'nama_hotel'           =>$nama_hotel, 
                     'alamat_hotel'         =>$alamat_hotel,
                     'fasilitas_hotel'      =>$fasilitas_hotel,
-                    'harga_hotel'          =>$harga_hotel);
+                    'harga_hotel'          =>$harga_hotel,
+                    'status_hotel'         =>$status_hotel);
                 
-                    $where  = array('id_hotel' =>$id);
+                    $where  = array('id_hotel' =>$id_hotel);
                 
                     $this->model_penginapan->update_data('penginapan', $data, $where); 
                     $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -122,5 +126,6 @@ class Data_penginapan extends CI_Controller{
             $this->form_validation->set_rules('gambar_hotel', 'Gambar Penginapan', 'required');
             $this->form_validation->set_rules('fasilitas_hotel', 'Fasilitas Penginapan', 'required');
             $this->form_validation->set_rules('harga_hotel', 'Harga Penginapan', 'required');
+            $this->form_validation->set_rules('status_hotel', 'Status Hotel', 'required');
         }
 }

@@ -10,10 +10,11 @@
         <tr>
             <th>NO</th>
             <th>Nama Hotel</th>
-            <th>Alamat Hotel</th>
-            <th>Gambar Hotel</th>
-            <th>Fasilitas Hotel</th>
-            <th>Harga Hotel</th>
+            <th>Alamat</th>
+            <th>Foto</th>
+            <th>Fasilitas</th>
+            <th>Harga</th>
+            <th>Status</th>
             <th>Aksi</th>
         </tr>
 
@@ -21,12 +22,13 @@
             <tr>
                 <td><?php echo $no++ ?></td>
                 <td><?php echo $inap->nama_hotel ?></td> 
-                <td><?php echo $inap->alamat_hotel ?></td>
+                <td width="150px"><?php echo $inap->alamat_hotel ?></td>
                 <td>
                     <img src="<?php echo base_url() ?>assets/hotel/<?php echo $inap->gambar_hotel; ?>" width="60px">
                 </td>
                 <td><?php echo $inap->fasilitas_hotel ?></td>
                 <td><?php echo $inap->harga_hotel ?></td>
+                <td><?php echo $inap->status_hotel?></td>
                 <td>
                     <?php echo anchor('data_penginapan/edit_penginapan/' .$inap->id_hotel, '<div class="btn btn-primary btn-sm">
                     <i class="fa fa-edit"></i></div>')?>
@@ -60,7 +62,7 @@
                 <input type="text" name="alamat_hotel" id="alamat_hotel" class="form-control">
             </div>    
             <div class="form-group">
-                <label for="gambar_hotel">Gambar Hotel</label>
+                <label for="gambar_hotel">Foto Hotel</label>
                 <input type="file" name="gambar_hotel" id="gambar_hotel" class="form-control">
             </div>
             <div class="form-group">
@@ -68,8 +70,16 @@
                 <input type="text" name="fasilitas_hotel" id="fasilitas_hotel" class="form-control">
             </div>
             <div class="form-group">
-                <label for="harga_hotel">Harga Hotel</label>
+                <label for="harga_hotel">Harga</label>
                 <input type="text" name="harga_hotel" id="harga_hotel" class="form-control">
+            </div>
+            <div class="form-group">
+            <label for="status_hotel">Status</label>
+                <select name="status_hotel" class="form-control">
+                        <option>--Pilih Status--</option>
+                        <option value="1">Tersedia</option>
+                        <option value="0">Tidak Tersedia</option>
+                </select>
             </div>
         
     </div>

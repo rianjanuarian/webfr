@@ -28,12 +28,14 @@
                 }
             }
         $harga_tiket    = $this->input->post('harga_tiket');
+        $status_wisata  = $this->input->post('status_wisata');
     
         $data = array(
             'nama_wisata'       => $nama_wisata,
             'alamat_wisata'     => $alamat_wisata,
             'gambar_wisata'     => $gambar_wisata,
-            'harga_tiket'       => $harga_tiket
+            'harga_tiket'       => $harga_tiket,
+            'status_wisata'     => $status_wisata
         );
 
         $this->model_wisata->tambah_wisata($data, 'wisata');
