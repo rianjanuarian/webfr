@@ -242,10 +242,10 @@
 
             <div class="topbar-divider d-none d-sm-block"></div>
 
-            <ul class="na navbar-nav navbar-right">
+            <ul class="na navbar-nav navbar-right mt-4">
                 <?php if($this->session->userdata('username_admin')) { ?>
                     <li>
-                        <div>Selamat Datang <?php echo $this->session->userdata('username_admin')?></div>
+                        <div>Selamat Datang, <?php echo $this->session->userdata('username_admin')?>!</div>
                     </li>
                     ||
                     <li class="ml-2">
