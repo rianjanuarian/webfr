@@ -27,7 +27,13 @@
                 </td>
                 <td><?php echo $trnsprt->kapasitas_transport?></td>
                 <td><?php echo $trnsprt->harga_transport?></td>
-                <td><?php echo $trnsprt->status_transport?></td>
+                <td><?php 
+                    if($trnsprt->status_transport=="0"){
+                        echo "<span class='badge badge-danger'> Tidak Tersedia</span>";
+                    }else{
+                        echo "<span class='badge badge-primary'> Tersedia</span>";
+                    }
+                ?></td>
                 <td>
                     <?php echo anchor('data_transportasi/edit/' .$trnsprt->id_transport, '<div class="btn btn-primary btn-sm">
                         <i class="fa fa-edit"></i></div>')?>
@@ -71,7 +77,15 @@
             <div class="form-group">
                 <label for="harga_transport">Harga Transport</label>
                 <input type="text" name="harga_transport" id="harga_transport" class="form-control">
-            </div>   
+            </div>
+            <div>
+            <label for="status_transport">Status</label>
+                <select name="status_transport" class="form-control">
+                        <option>--Pilih Status--</option>
+                        <option value="1">Tersedia</option>
+                        <option value="0">Tidak Tersedia</option>
+                </select>
+            </div>
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal">BATAL</button>

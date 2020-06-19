@@ -28,7 +28,13 @@
                 </td>
                 <td><?php echo $inap->fasilitas_hotel ?></td>
                 <td><?php echo $inap->harga_hotel ?></td>
-                <td><?php echo $inap->status_hotel?></td>
+                <td><?php 
+                    if($inap->status_hotel=="0"){
+                        echo "<span class='badge badge-danger'> Tidak Tersedia</span>";
+                    }else{
+                        echo "<span class='badge badge-primary'> Tersedia</span>";
+                    }
+                ?></td>
                 <td>
                     <?php echo anchor('data_penginapan/edit_penginapan/' .$inap->id_hotel, '<div class="btn btn-primary btn-sm">
                     <i class="fa fa-edit"></i></div>')?>

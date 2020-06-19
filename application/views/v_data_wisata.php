@@ -27,7 +27,13 @@
                 <img src="<?php echo base_url() ?>assets/wisata/<?php echo $wst->gambar_wisata; ?>" width="70" height="90">
                 </td>
                 <td><?php echo $wst->harga_tiket ?></td>
-                <td><?php echo $wst->status_wisata?></td>
+                <td><?php 
+                    if($wst->status_wisata=="0"){
+                        echo "<span class='badge badge-danger'> Tidak Tersedia</span>";
+                    }else{
+                        echo "<span class='badge badge-primary'> Tersedia</span>";
+                    }
+                ?></td>
                 <td>
                     <?php echo anchor('data_wisata/edit/' .$wst->id_wisata, '<div class="btn btn-primary btn-sm">
                         <i class="fa fa-edit"></i>
@@ -69,6 +75,14 @@
             <div class="form-group">
                 <label for="harga_tiket">Harga Tiket</label>
                 <input type="harga_tiket" name="harga_tiket" id="harga_tiket" class="form-control">
+            </div>
+            <div>
+            <label for="status_wisata">Status</label>
+                <select name="status_wisata" class="form-control">
+                        <option>--Pilih Status--</option>
+                        <option value="1">Tersedia</option>
+                        <option value="0">Tidak Tersedia</option>
+                </select>
             </div>
         
     </div>
