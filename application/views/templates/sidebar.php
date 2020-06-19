@@ -69,6 +69,12 @@
         <span>Transaksi</span></a>
     </li>
 
+    <li class="nav-item">
+        <a class="nav-link" href="<?php echo base_url('Invoices')?>">
+        <i class="fas fa-torii-gate"></i>
+        <span>Transaksi ada Detail</span></a>
+    </li>
+
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
 
