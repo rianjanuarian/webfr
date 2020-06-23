@@ -58,9 +58,20 @@
     </li>
 
     <li class="nav-item">
+        <a class="nav-link" href="<?php echo base_url('edit_transport')?>">
+        <i class="fas fa-hotel"></i>
+        <span>Edit Transportasi</span></a>
+
+    <li class="nav-item">
         <a class="nav-link" href="<?php echo base_url('data_wisata')?>">
         <i class="fas fa-torii-gate"></i>
         <span>Wisata</span></a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="<?php echo base_url('edit_wisata')?>">
+        <i class="fas fa-torii-gate"></i>
+        <span>Edit Wisata</span></a>
     </li>
 
     <li class="nav-item">
