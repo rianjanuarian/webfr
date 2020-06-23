@@ -4,9 +4,15 @@ class Model_penginapan extends CI_Model{
           return $this->db->get('penginapan'); // memanggil dari database tabel tb_barang
     }
 
-    public function tampil_data2($where)
+    public function get_edit($where, $table)
     {
-        return $this->db->get('penginapan', $where);
+        return $this->db->get_where($table, $where);
+    }
+
+    public function get_update($id_hotel, $data)
+    {
+        $this->db->where($this->id_hotel, $id_hotel);
+        $this->db->update($this->table, $data);
     }
 
     public function tambah_penginapan($data, $table){ // menjalankan fungsi tambah barang
