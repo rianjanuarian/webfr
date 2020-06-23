@@ -51,7 +51,7 @@
 							<div class="col-lg-6">
 								<div class="offers_image_container">
 									<!-- Image by https://unsplash.com/@kensuarez -->
-									<div class="offers_image_background" style="background-image:url(<?php echo base_url().'img/gambarwisata/'. $gbr->gambar_wisata ?>)"></div>
+									<div class="offers_image_background" style="background-image:url(<?php echo base_url().'assets/wisata/'. $gbr->gambar_wisata ?>)"></div>
 									<div class="offer_name"><a href=""><?php echo $gbr->nama_wisata ?></a></div>
 								</div>
 							</div>
