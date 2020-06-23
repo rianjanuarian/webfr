@@ -6,7 +6,7 @@
     <div class="card">
         <div class="card-body">
         <?php foreach($penginapan as $inp):?>
-        <form method="POST" action="<?php echo base_url('data_penginapan/aksi_update_penginapan')?>" enctype="multipart/form-data">
+        <form method="POST" action="<?php echo base_url('data_penginapan/update_penginapan')?>" enctype="multipart/form-data">
             <div class="row">
                 <div class="col-md-12">
                     <div class="form-group">
@@ -25,7 +25,7 @@
 
                     <div class="form-group">
                         <label for="gambar_hotel">Gambar Penginapan</label>
-                        <input type="file" name="gambar_hotel" class="form-control">
+                        <input type="file" name="gambar_hotel" class="form-control" value="<?php echo $inp->gambar_hotel ?>">
                     </div>
                 
                     <div class='form-group'>
@@ -38,8 +38,17 @@
                         <input type="text" name="harga_hotel" class="form-control" value="<?php echo $inp->harga_hotel ?>">
                     </div>
 
-                    <button type="submit" class="btn btn-primary mt-4">Simpan</button>
-                    <button type="reset" class="btn btn-danger mt-4">Batal</button>
+                    <div class="form-group">
+                        <label for="status_hotel">Status</label>
+                        <select name="status_hotel" class="form-control">
+                            <option>--Pilih Status--</option>
+                            <option value="1">Tersedia</option>
+                            <option value="0">Tidak Tersedia</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" ></button>
+                    <a href="<?php echo site_url('data_penginapan/index') ?>" class="btn btn-danger btn-md">Batalkan </a>
                 </div>
             </div>
         </form>
