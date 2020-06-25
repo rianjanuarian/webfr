@@ -13,18 +13,37 @@
             </div>
 
             <div class="for-group">
-                <label>nohp_pelanggan</label>
-                <input type="text" name="nohp_pelanggan" class="form-control" value="<?php echo $adm->nohp_pelanggan ?>">
+                <label>Username</label>
+                <input type="text" name="username" class="form-control" value="<?php echo $adm->username ?>">
             </div>
 
             <div class="for-group">
-                <label>email</label>
-                <input type="text" name="email_pelanggan" class="form-control" value="<?php echo $adm->email_pelanggan ?>">
+                <label>Alamat</label>
+                <input type="text" name="alamat" class="form-control" value="<?php echo $adm->alamat ?>">
+            </div>
+
+            <div class="form-group">
+                        <label for="gender">Gender</label>
+                        <select name="gender" class="form-control">
+                            <option>--Pilih Gender--</option>
+                            <option <?php echo $adm->gender == 1 ? "selected" :"" ; ?> value="1">Pria</option>
+                            <option <?php echo $adm->gender == 0 ? "selected" :"" ; ?> value="0">Wanita</option>
+                        </select>
+                    </div>
+
+            <div class="for-group">
+                <label>No Telepon</label>
+                <input type="text" name="no_telepon" class="form-control" value="<?php echo $adm->no_telepon ?>">
+            </div>
+
+            <div class="for-group">
+                <label>No Identitas</label>
+                <input type="text" name="no_identitas" class="form-control" value="<?php echo $adm->no_identitas ?>">
             </div>
 
             <div class="for-group">
                 <label>PASSWORD</label>
-                <input type="password" name="password_pelanggan" class="form-control" value="<?php echo $adm->password_pelanggan ?>">
+                <input type="password" name="password" class="form-control" value="<?php echo $adm->password ?>">
             </div>
 
             <button type="submit" class="btn btn-primary btn-sm mt-3">SIMPAN</button>

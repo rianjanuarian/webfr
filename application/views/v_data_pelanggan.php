@@ -9,9 +9,12 @@
         <tr>
             <th>NO</th>
             <th>Nama pelanggan</th>
-            <th>nohp_pelanggan</th>
-            <th>email_pelanggan</th>
-            <th>password_pelanggan</th>
+            <th>Username</th>
+            <th>Alamat</th>
+            <th>Gender</th>
+            <th width="60px">no_telepon</th>
+            <th width="60px">no_identitas</th>
+            <th width="60px">password</th>
             <th>Aksi</th>
         </tr>
 
@@ -19,14 +22,23 @@
             <tr>
                 <td><?= $no++ ?></td>
                 <td><?= $adm->nama_pelanggan ?></td>
-                <td><?= $adm->nohp_pelanggan ?></td>
-                <td><?= $adm->email_pelanggan ?></td>
-                <td><?= $adm->password_pelanggan ?></td>
+                <td><?= $adm->username ?></td>
+                <td><?= $adm->alamat?></td>
+                <td><?php 
+                    if($adm->gender=="1"){
+                        echo "Pria";
+                    }else{
+                        echo "Wanita";
+                    }
+                ?></td>
+                <td><?= $adm->no_telepon ?></td>
+                <td><?= $adm->no_identitas ?></td>
+                <td><?= $adm->password ?></td>
                 <td>
                 <?php echo anchor('data_pelanggan/edit/' .$adm->id_pelanggan, '<div class="btn btn-primary btn-sm">
                     <i class="fa fa-edit"></i></div>')?>
         
-                    <?php echo anchor('data_pelanggan/hapus/' .$adm->id_pelanggan, '<div class="btn btn-danger btn-sm">
+                <?php echo anchor('data_pelanggan/hapus/' .$adm->id_pelanggan, '<div class="btn btn-danger btn-sm">
                     <i class="fa fa-trash"></i></div>')?>
                 </td>
             </tr>
@@ -51,16 +63,32 @@
                 <input type="text" name="nama_pelanggan" id="nama_pelanggan" class="form-control">
             </div>
             <div class="form-group">
-                <label for="nohp_pelanggan">nohp_pelanggan</label>
-                <input type="text" name="nohp_pelanggan" id="nohp_pelanggan" class="form-control">
-            </div>    
-            <div class="form-group">
-                <label for="email_pelanggan">email_pelanggan</label>
-                <input type="text" name="email_pelanggan" id="email_pelanggan" class="form-control">
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username" class="form-control">
             </div>
             <div class="form-group">
-                <label for="password_pelanggan">password_pelanggan</label>
-                <input type="password" name="password_pelanggan" id="password_pelanggan" class="form-control">
+                <label for="alamat">Alamat</label>
+                <input type="text" name="alamat" id="alamat" class="form-control">
+            </div>
+            <div class="form-group">
+            <label for="gender">Gender</label>
+                <select name="gender" class="form-control">
+                        <option>--Pilih Gender--</option>
+                        <option value="1">Pria</option>
+                        <option value="0">Wanita</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="no_telepon">no_telepon</label>
+                <input type="text" name="no_telepon" id="no_telepon" class="form-control">
+            </div>    
+            <div class="form-group">
+                <label for="no_identitas">no_identitas</label>
+                <input type="text" name="no_identitas" id="no_identitas" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="password">password</label>
+                <input type="password" name="password" id="password" class="form-control">
             </div>
         
     </div>
