@@ -9,10 +9,10 @@ class Model_penginapan extends CI_Model{
         return $this->db->get_where($table, $where);
     }
 
-    public function get_update($id_hotel, $data)
+    public function get_update($data, $where)
     {
-        $this->db->where($this->id_hotel, $id_hotel);
-        $this->db->update($this->table, $data);
+        $this->db->where($where);
+        $this->db->update('penginapan', $data);
     }
 
     public function tambah_penginapan($data, $table){ // menjalankan fungsi tambah barang

@@ -7,18 +7,18 @@
             </div>
             
             <div class="form-group">
+                <label>No Identitas</label>
+                <input type="text" name="no_identitas" class="form-control" value="<?php echo $adm->no_identitas ?>">
+            </div>
+
+            <div class="form-group">
                 <label>Nama admin</label>
                 <input type="text" name="nama_admin" class="form-control" value="<?php echo $adm->nama_admin ?>">
             </div>
 
             <div class="form-group">
-                <label>NIK</label>
-                <input type="text" name="nik" class="form-control" value="<?php echo $adm->nik ?>">
-            </div>
-
-            <div class="form-group">
                 <label>Username</label>
-                <input type="text" name="username_admin" class="form-control" value="<?php echo $adm->username_admin ?>">
+                <input type="text" name="username" class="form-control" value="<?php echo $adm->username ?>">
             </div>
 
             <div class="form-group">

@@ -22,6 +22,7 @@ class Data_penginapan extends CI_Controller{
         if ($gambar_hotel=''){}else {
             $config ['upload_path']='./assets/hotel/';
             $config ['allowed_types']='jpg|jpeg|png';
+            $config['encrypt_name'] = true;
             $this->load->library('upload');
             $this->upload->initialize($config);
 
@@ -65,30 +66,60 @@ class Data_penginapan extends CI_Controller{
 
         public function update_penginapan()
         {
-            $this->_rules();
+            $id_hotel = $this->input->post('id_hotel');
+            $nama_hotel = $this->input->post('nama_hotel');
+            $alamat_hotel= $this->input->post('alamat_hotel');
+            $fasilitas_hotel = $this->input->post('fasilitas_hotel');
+            $harga_hotel = $this->input->post('harga_hotel');
+            $status_hotel = $this->input->post('status_hotel');
 
-            if($this->form_validation->run()==FALSE){
-                $this->edit_penginapan($this->input->post('id_hotel', TRUE));
-            }else{
-                $data = array(
-                    'nama_hotel' => $this->input->post('nama_hotel', TRUE),
-                    'alamat_hotel' => $this->input->post('alamat_hotel', TRUE),
-                    'gambar_hotel' => $this->input->post('gambar_hotel', TRUE),
-                    'fasilitas_hotel' => $this->input->post('fasilitas_hotel', TRUE),
-                    'harga_hotel' => $this->input->post('harga_hotel', TRUE),
-                    'status_hotel' => $this->input->post('status_hotel', TRUE),
+            $path = './assets/hotel/';
+
+            $where = array('id_hotel' => $id_hotel);
+
+            if($_FILES['gambar_hotel']['name']!= null){
+                if($foto =''){}else{
+                    $config['upload_path'] = './assets/hotel/';
+                    $config['allowed_types'] = 'jpg|png|jpeg';
+                    $config['encrypt_name'] = true;
+                //    $config['overwrite'] = true;
+                //    $config['file_name'] = $this->db->get_where('penginapan', array('id_hotel' => $this->input->post('id_hotel')))->row()->gambar_hotel;
+    
+                    $this->load->library('upload');
+                    $this->upload->initialize($config);
+                    if(!$this->upload->do_upload('fotoup')){
+                        die("Gagal Update");
+                    }else{
+                        @unlink($path.$this->input->post('filelama'));
+                        $gambar_hotel = $this->upload->data('file_name');                    
+                    }
+                }
+                $data = array (
+                    'nama_hotel'        => $nama_hotel,
+                    'alamat_hotel'      => $alamat_hotel,
+                    'gambar_hotel'      => $gambar_hotel,
+                    'fasilitas_hotel'   => $fasilitas_hotel,
+                    'harga_hotel'       => $harga_hotel,
+                    'status_hotel'      => $status_hotel
                 );
-                
-                $this->model_penginapan->get_update($this->input->post('id_hotel', TRUE), $data); 
-                $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
-                Data Berhasil Diupdate!.
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-                </div>');
-                redirect('data_penginapan/index');
+            }else{
+                $data = array (
+                    'nama_hotel'        => $nama_hotel,
+                    'alamat_hotel'      => $alamat_hotel,
+                    'fasilitas_hotel'   => $fasilitas_hotel,
+                    'harga_hotel'       => $harga_hotel,
+                    'status_hotel'      => $status_hotel
+                );
             }
-
+            
+            $this->model_penginapan->get_update($data, $where);
+        redirect('data_penginapan');
+        $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+        Data Berhasil Diupdate!.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+        </div>');        
         }
 
         function hapus($id_hotel){ // menghapus data dengan menyeleksi query untuk menghapus record

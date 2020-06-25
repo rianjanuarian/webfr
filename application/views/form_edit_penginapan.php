@@ -24,8 +24,8 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="gambar_hotel">Gambar Penginapan</label>
-                        <input type="file" name="gambar_hotel" class="form-control" value="<?php echo $inp->gambar_hotel ?>">
+                        <label>Gambar Penginapan</label>
+                        <input type="file" name="fotoup" class="form-control" value="<?php echo $inp->gambar_hotel ?>">
                     </div>
                 
                     <div class='form-group'>
@@ -42,12 +42,14 @@
                         <label for="status_hotel">Status</label>
                         <select name="status_hotel" class="form-control">
                             <option>--Pilih Status--</option>
-                            <option value="1">Tersedia</option>
-                            <option value="0">Tidak Tersedia</option>
+                            <option <?php echo $inp->status_hotel == 1 ? "selected" :"" ; ?> value="1">Tersedia</option>
+                            <option <?php echo $inp->status_hotel == 0 ? "selected" :"" ; ?> value="0">Tidak Tersedia</option>
                         </select>
                     </div>
 
-                    <button type="submit" ></button>
+                    <input type="hidden" name="filelama" value="<?php echo $inp->gambar_hotel ?>">
+
+                    <button type="submit" class="btn btn-primary btn-md">Simpan</button>
                     <a href="<?php echo site_url('data_penginapan/index') ?>" class="btn btn-danger btn-md">Batalkan </a>
                 </div>
             </div>

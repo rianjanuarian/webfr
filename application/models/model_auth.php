@@ -3,10 +3,10 @@
 class Model_auth extends CI_Model{
     public function cek_login()
     {
-        $username_admin = set_value('username_admin');
+        $username = set_value('username');
         $password       = set_value('password');
 
-        $result         = $this->db->where('username_admin',$username_admin)
+        $result         = $this->db->where('username',$username)
                                     ->where('password',$password)
                                     ->limit(1)
                                     ->get('admin');
