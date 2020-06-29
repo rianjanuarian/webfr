@@ -19,26 +19,26 @@
             <th>Aksi</th>
         </tr>
 
-        <?php $no=1; foreach($katalog as $adm): ?>
+        <?php $no=1; foreach($showall as $pkt): ?>
             <tr>
                 <td><?= $no++ ?></td>
-                <td><?= $adm->nama_katalog ?></td>
-                <td><?= $adm->id_transport ?></td>
-                <td><?= $adm->id_hotel ?></td>
-                <td><?= $adm->id_wisata ?></td>
-                <td><?= $adm->harga_katalog ?></td>
+                <td><?= $pkt->nama_katalog ?></td>
+                <td><?= $pkt->nama_transport ?></td>
+                <td><?= $pkt->nama_hotel ?></td>
+                <td><?= $pkt->nama_wisata ?></td>
+                <td><?= $pkt->harga_katalog ?></td>
                 <td><?php 
-                    if($adm->status=="0"){
+                    if($pkt->status=="0"){
                         echo "<span class='badge badge-danger'> Tidak Tersedia</span>";
                     }else{
                         echo "<span class='badge badge-primary'> Tersedia</span>";
                     }
                 ?></td>
                 <td>
-                <?php echo anchor('data_paket/edit/' .$adm->id_katalog, '<div class="btn btn-primary btn-sm">
+                <?php echo anchor('data_paket/edit/' .$pkt->id_katalog, '<div class="btn btn-primary btn-sm">
                     <i class="fa fa-edit"></i></div>')?>
         
-                    <?php echo anchor('data_paket/hapus/' .$adm->id_katalog, '<div class="btn btn-danger btn-sm">
+                    <?php echo anchor('data_paket/hapus/' .$pkt->id_katalog, '<div class="btn btn-danger btn-sm">
                     <i class="fa fa-trash"></i></div>')?>
                 </td>
             </tr>
@@ -63,36 +63,36 @@
                 <input type="text" name="nama_katalog" id="nama_katalog" class="form-control">
             </div>
             <div class="form-group">
-                <label>ID Transportasi</label>
+                <label>Data Transportasi</label>
                 <select name="id_transport" class="form-control">
                     <option value="">--Pilih Transport--</option>
-                    <?php foreach($transport as $sport):?>
-                        <option value="<?php echo $sport->id_transport; ?>">
-                            <?php echo $sport->id_transport; ?>
+                    <?php foreach ($combotrans as $ctrans) {?>
+                        <option type="text" name="id_transport" value="<?php echo $ctrans->id_transport; ?>">
+                        <?php echo $ctrans->nama_transport; ?> 
                         </option>
-                    <?php endforeach;?>
+                    <?php } ?>
                 </select>
             </div>    
             <div class="form-group">
-                <label for="id_hotel">ID Hotel</label>
+                <label for="id_hotel">Data Hotel</label>
                 <select name="id_hotel" class="form-control">
-                    <option>--Pilih ID Hotel--</option>
-                    <?php foreach($penginapan as $inap):?>
-                        <option value="<?php echo $inap->id_hotel ?>">
-                            <?php echo $inap->id_hotel ?>
+                    <option>--Pilih Hotel--</option>
+                    <?php foreach($comboinap as $cinap) { ?>
+                        <option type="text" name="id_hotel" value="<?php echo $cinap->id_hotel; ?>">
+                            <?php echo $cinap->nama_hotel; ?>
                         </option>
-                    <?php endforeach;?>
+                    <?php } ?>
                 </select>
             </div>
             <div class="form-group">
-                <label for="id_wisata">ID Wisata</label>
+                <label for="id_wisata">Data Wisata</label>
                 <select name="id_wisata" class="form-control">
-                    <option>--Pilih ID Wisata--</option>
-                    <?php foreach($wisata as $wst):?>
-                        <option value="<?php echo $wst->id_wisata ?>">
-                            <?php echo $wst->id_wisata ?>
+                    <option>--Pilih Wisata--</option>
+                    <?php foreach($wisata as $wst) { ?>
+                        <option type="text" name="id_wisata" value="<?php echo $wst->id_wisata; ?>">
+                            <?php echo $wst->nama_wisata; ?>
                         </option>
-                    <?php endforeach;?>
+                    <?php } ?>
                 </select>
             </div>
             <div class="form-group">

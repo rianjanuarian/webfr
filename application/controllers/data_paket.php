@@ -3,10 +3,11 @@
 class Data_paket extends CI_Controller{
     public function index()
     {
-        $data['katalog'] = $this->model_paket->tampil_paket()->result();
-        $data['transport'] = $this->model_paket->tampil_paket()->result();
-        $data['penginapan'] = $this->model_paket->tampil_paket()->result();
-        $data['wisata'] = $this->model_paket->tampil_paket()->result();
+        $data['showall'] = $this->model_paket->tampil_paket() ->result();
+        //$data['katalog'] = $this->model_paket->tampil_paket()->result();
+        $data['combotrans']= $this->model_paket->combotrans()->result();
+        $data['comboinap'] = $this->model_paket->comboinap()->result();
+        $data['wisata'] = $this->model_paket->wisata()->result();
         $this->load->view('templates/header');
         $this->load->view('templates/sidebar');
         $this->load->view('v_data_paket' , $data);
@@ -15,7 +16,7 @@ class Data_paket extends CI_Controller{
 
     public function aksi_tambah()
     {
-        $data['transport'] = $this->model_paket->tampil_paket()->result();
+        
         $data['penginapan']= $this->model_paket->tampil_paket()->result();
         $data['wisata']    = $this->model_paket->tampil_paket()->result();
         $nama_katalog      = $this->input->post('nama_katalog');

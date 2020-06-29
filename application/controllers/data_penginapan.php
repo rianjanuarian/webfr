@@ -77,7 +77,8 @@ class Data_penginapan extends CI_Controller{
 
             $where = array('id_hotel' => $id_hotel);
 
-            if($_FILES['gambar_hotel']['name']!= null){
+            if($_FILES['fotoup']['name']!= null){
+                $foto = $_FILES['fotoup']['name'];
                 if($foto =''){}else{
                     $config['upload_path'] = './assets/hotel/';
                     $config['allowed_types'] = 'jpg|png|jpeg';
@@ -88,7 +89,8 @@ class Data_penginapan extends CI_Controller{
                     $this->load->library('upload');
                     $this->upload->initialize($config);
                     if(!$this->upload->do_upload('fotoup')){
-                        die("Gagal Update");
+                        //die("Gagal Update");
+                        redirect('data_penginapan');
                     }else{
                         @unlink($path.$this->input->post('filelama'));
                         $gambar_hotel = $this->upload->data('file_name');                    

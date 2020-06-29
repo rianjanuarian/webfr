@@ -35,7 +35,7 @@
                     }
                 ?></td>
                 <td>
-                    <?php echo anchor('data_transportasi/edit/' .$trnsprt->id_transport, '<div class="btn btn-primary btn-sm">
+                    <?php echo anchor('data_transportasi/edit_transportasi/' .$trnsprt->id_transport, '<div class="btn btn-primary btn-sm">
                         <i class="fa fa-edit"></i></div>')?>
 
                     <?php echo anchor('data_transportasi/hapus/' .$trnsprt->id_transport, '<div class="btn btn-danger btn-sm">
