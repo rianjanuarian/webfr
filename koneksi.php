@@ -2,5 +2,5 @@
 $HOST = 'localhost';
 $USER = 'root';
 $PASS = '';
-$DB = 'sipelita';
+$DB = 'asu';
  ?>

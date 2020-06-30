@@ -2,16 +2,16 @@
  define('HOST','localhost');
  define('USER','root');
  define('PASS','');
- define('DB','sipelita');
+ define('DB','asu');
 
  $con = mysqli_connect(HOST,USER,PASS,DB) or die('Unable to Connect');
  if($_SERVER['REQUEST_METHOD']=='POST'){
  //Getting values
- $username = $_POST['email_pelanggan'];
- $password = $_POST['password_pelanggan'];
+ $username = $_POST['username'];
+ $password = $_POST['password'];
 
  //Creating sql query
- $sql = "SELECT * FROM pelanggan WHERE email_pelanggan='$username' AND password_pelanggan='$password'";
+ $sql = "SELECT * FROM pelanggan WHERE username='$username' AND password='$password'";
 
  //executing query
  $result = mysqli_query($con,$sql);

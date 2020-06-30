@@ -1,31 +1,12 @@
-<?php
-$host = "localhost"; // host of MySQL server
-$user = "root"; // MySQL user
-$pwd = ""; // MySQL user's password
-$db = "sipelita"; // database name
+<?php  
+ include 'koneksi2.php'; 
+ $hasil         = mysql_query("SELECT * FROM wisata") or die(mysql_error());
+ $json_response = array();
  
-// Create connection
-$con = mysqli_connect($host, $user, $pwd, $db);
- 
-// Check connection
-if(mysqli_connect_errno($con)) {
-    die("Failed to connect to MySQL: " . mysqli_connect_error());
+if(mysql_num_rows($hasil)> 0){
+ while ($row = mysql_fetch_array($hasil)) {
+     $json_response[] = $row;
+ }
+ echo json_encode(array('wisata' => $json_response));
 } 
- 
-// query the application data
-$sql = "SELECT * FROM wisata ORDER By id_wisata";
-$result = mysqli_query($con, $sql);
- 
-// an array to save the application data
-$rows = array();
- 
-// iterate to query result and add every rows into array
-while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-    $rows[] = $row; 
-}
- 
-// close the database connection
-mysqli_close($con);
- 
-// echo the application data in json format
-echo json_encode($rows);
+?>
