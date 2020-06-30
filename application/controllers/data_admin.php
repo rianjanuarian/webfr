@@ -12,16 +12,16 @@ class Data_admin extends CI_Controller{
 
     public function aksi_tambah()
     {
+        $no_identitas   = $this->input->post('no_identitas');
         $nama_admin     = $this->input->post('nama_admin');
-        $nik            = $this->input->post('nik');
-        $username_admin = $this->input->post('username_admin');
+        $username       = $this->input->post('username');
         $password       = $this->input->post('password');
     
         $data = array(
-            'nama_admin'        => $nama_admin,
-            'nik'               => $nik,
-            'username_admin'    => $username_admin,
-            'password'          => $password
+            'no_identitas'  => $no_identitas,
+            'nama_admin'    => $nama_admin,
+            'username'      => $username,
+            'password'      => $password
         );
 
         $this->model_admin->tambah_admin($data, 'admin');
@@ -41,16 +41,16 @@ class Data_admin extends CI_Controller{
     public function update_admin()
     {
         $id_admin =$this->input->post('id_admin');
+        $no_identitas =$this->input->post('no_identitas');
         $nama_admin =$this->input->post('nama_admin');
-        $nik =$this->input->post('nik');
-        $username_admin =$this->input->post('username_admin');
+        $username =$this->input->post('username');
         $password =$this->input->post('password');
 
         $data=array(
             'id_admin'          => $id_admin,
+            'no_identitas'      => $no_identitas,
             'nama_admin'        => $nama_admin,
-            'nik'               => $nik,
-            'username_admin'    => $username_admin,
+            'username'          => $username,
             'password'          => $password
         );
 

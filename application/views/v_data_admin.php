@@ -8,8 +8,8 @@
     <table class="table table-bordered">
         <tr>
             <th>NO</th>
+            <th>NO Identitas</th>
             <th>Nama Admin</th>
-            <th>NIK</th>
             <th>Username</th>
             <th>Password</th>
             <th>Aksi</th>
@@ -18,9 +18,9 @@
         <?php $no=1; foreach($admin as $adm): ?>
             <tr>
                 <td><?= $no++ ?></td>
+                <td><?= $adm->no_identitas ?></td>
                 <td><?= $adm->nama_admin ?></td>
-                <td><?= $adm->nik ?></td>
-                <td><?= $adm->username_admin ?></td>
+                <td><?= $adm->username ?></td>
                 <td><?= $adm->password ?></td>
                 <td>
                 <?php echo anchor('data_admin/edit/' .$adm->id_admin, '<div class="btn btn-primary btn-sm">
@@ -46,17 +46,17 @@
     </div>
     <div class="modal-body">
         <form action="<?php echo base_url(). 'data_admin/aksi_tambah';?>" method="post">
+        <div class="form-group">
+                <label for="no_identitas">No_identitas</label>
+                <input type="text" name="no_identitas" id="no_identitas" class="form-control">
+            </div>
             <div class="form-group">
                 <label for="nama_admin">Nama Admin</label>
                 <input type="text" name="nama_admin" id="nama_admin" class="form-control">
-            </div>
-            <div class="form-group">
-                <label for="nik">NIK</label>
-                <input type="text" name="nik" id="nik" class="form-control">
             </div>    
             <div class="form-group">
                 <label for="username">Username</label>
-                <input type="text" name="username_admin" id="username" class="form-control">
+                <input type="text" name="username" id="username" class="form-control">
             </div>
             <div class="form-group">
                 <label for="password">Password</label>

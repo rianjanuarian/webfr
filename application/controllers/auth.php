@@ -3,7 +3,7 @@
 class Auth extends CI_Controller{
     public function login()
     {
-        $this->form_validation->set_rules('username_admin', 'Username_Admin', 'required');
+        $this->form_validation->set_rules('username', 'Username', 'required');
         $this->form_validation->set_rules('password', 'Password', 'required');
         if ($this->form_validation->run() == FALSE)
         {
@@ -24,7 +24,7 @@ class Auth extends CI_Controller{
                 );
                 redirect('auth/login');
             }else{
-                $this->session->set_userdata('username_admin',$auth->username_admin);
+                $this->session->set_userdata('username',$auth->username);
                 redirect('dashboard');
             }
         }

@@ -58,9 +58,20 @@
     </li>
 
     <li class="nav-item">
+        <a class="nav-link" href="<?php echo base_url('edit_transport')?>">
+        <i class="fas fa-hotel"></i>
+        <span>Edit Transportasi</span></a>
+
+    <li class="nav-item">
         <a class="nav-link" href="<?php echo base_url('data_wisata')?>">
         <i class="fas fa-torii-gate"></i>
         <span>Wisata</span></a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="<?php echo base_url('edit_wisata')?>">
+        <i class="fas fa-torii-gate"></i>
+        <span>Edit Wisata</span></a>
     </li>
 
     <li class="nav-item">
@@ -243,9 +254,9 @@
             <div class="topbar-divider d-none d-sm-block"></div>
 
             <ul class="na navbar-nav navbar-right mt-4">
-                <?php if($this->session->userdata('username_admin')) { ?>
+                <?php if($this->session->userdata('username')) { ?>
                     <li>
-                        <div>Selamat Datang, <?php echo $this->session->userdata('username_admin')?>!</div>
+                        <div>Selamat Datang, <?php echo $this->session->userdata('username')?>!</div>
                     </li>
                     ||
                     <li class="ml-2">

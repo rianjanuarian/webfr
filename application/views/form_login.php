@@ -20,11 +20,11 @@
 
                   <form method="post" action="<?php echo base_url('auth/login')?>" class="user">
                     <div class="form-group">
-                      <input type="text" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address..." name="username_admin">
-                      <?php echo form_error('username_admin', '<div class="text-danger small ml-2">','</div>'); ?>
+                      <input type="text" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Masukkan Username Anda..." name="username">
+                      <?php echo form_error('username', '<div class="text-danger small ml-2">','</div>'); ?>
                     </div>
                     <div class="form-group">
-                      <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password" name="password">
+                      <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Masukkan Password..." name="password">
                       <?php echo form_error('password', '<div class="text-danger small ml-2">','</div>'); ?>
                     </div>
                     <button type="submit" class="btn btn-primary btn-user btn-block" form-control>LOGIN</button>
