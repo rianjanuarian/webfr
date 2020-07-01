@@ -4,12 +4,12 @@
         <tr>
             <th>NO</th>
             <th>Id Transaksi</th>
-            <th>id_katalog</th>
-            <th>id_pelanggan</th>
-            <th>tgl_transaksi</th>
-            <th>tgl_berangkat</th>
+            <th>ID Katalog</th>
+            <th>ID Pelanggan</th>
+            <th>Tanggal Transaksi</th>
+            <th>TanggaL Berangkat</th>
             <th>penerima</th>
-            <th>alamat_rinci</th>
+            <th>Alamat Rinci</th>
             <th>NO HP Penerima</th>
             <th>Status Bayar</th>
             <th>Aksi</th>
