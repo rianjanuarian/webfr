@@ -82,9 +82,9 @@
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="<?php echo base_url('data_pesanan')?>">Transaksi Paket</a>
-            <a class="collapse-item" href="<?php echo base_url('transaksi_homestay') ?>">Transaksi Homestay</a>
-            <a class="collapse-item" href="<?php echo base_url('transaksi_transport') ?>">Transaksi Transport</a>
-            <a class="collapse-item" href="<?php echo base_url('transaksi_wisata') ?>">Transaksi Wisata</a>
+            <a class="collapse-item" href="<?php echo base_url('transaksi_homestay/trans_home') ?>">Transaksi Homestay</a>
+            <a class="collapse-item" href="<?php echo base_url('transaksi_homestay/trans_sport') ?>">Transaksi Transport</a>
+            <a class="collapse-item" href="<?php echo base_url('transaksi_homestay/trans_wis') ?>">Transaksi Wisata</a>
         </div>
         </div>
     </li>
