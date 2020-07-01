@@ -44,7 +44,7 @@
                     </div>
 
                     <div class='form-group'>
-                        <label for="nohp_penerima">Penerima</label>
+                        <label for="nohp_penerima">No Hp Penerima</label>
                         <input type="text" name="nohp_penerima" class="form-control" value="<?php echo $inp->nohp_penerima ?>">
                     </div>
 
