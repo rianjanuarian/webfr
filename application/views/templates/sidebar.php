@@ -7,8 +7,8 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-        <div class="sidebar-brand-icon rotate-n-15">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?php echo base_url('dashboard')?>">
+        <div class="sidebar-brand-icon">
         <i class="far fa-building"></i>
         </div>
         <div class="sidebar-brand-text mx-3">SIPELITA</div>
@@ -20,11 +20,11 @@
     </div>
 
     <!-- Nav Item - Charts -->
-    <li class="nav-item">
+    <!--<li class="nav-item">
         <a class="nav-link" href="<?php echo base_url('dashboard')?>">
         <i class="fas fa-chart-line"></i>
         <span>Dashboard</span></a>
-    </li>
+    </li>-->
 
     <!-- Nav Item - Charts -->
     <li class="nav-item">
@@ -57,10 +57,10 @@
         <span>Transportasi</span></a>
     </li>
 
-    <li class="nav-item">
+    <!--<li class="nav-item">
         <a class="nav-link" href="<?php echo base_url('edit_transport')?>">
         <i class="fas fa-hotel"></i>
-        <span>Edit Transportasi</span></a>
+        <span>Edit Transportasi</span></a>-->
 
     <li class="nav-item">
         <a class="nav-link" href="<?php echo base_url('data_wisata')?>">
@@ -68,23 +68,52 @@
         <span>Wisata</span></a>
     </li>
 
-    <li class="nav-item">
+    <!--<li class="nav-item">
         <a class="nav-link" href="<?php echo base_url('edit_wisata')?>">
         <i class="fas fa-torii-gate"></i>
         <span>Edit Wisata</span></a>
+    </li>-->
+
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+        <i class="fas fa-fw fa-wrench"></i>
+        <span>Transaksi</span>
+        </a>
+        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+        <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="<?php echo base_url('data_pesanan')?>">Transaksi Paket</a>
+            <a class="collapse-item" href="<?php echo base_url('transaksi_homestay') ?>">Transaksi Homestay</a>
+            <a class="collapse-item" href="<?php echo base_url('transaksi_transport') ?>">Transaksi Transport</a>
+            <a class="collapse-item" href="<?php echo base_url('transaksi_wisata') ?>">Transaksi Wisata</a>
+        </div>
+        </div>
     </li>
 
     <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+        <i class="fas fa-fw fa-folder"></i>
+        <span>INVOICES</span>
+        </a>
+        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+        <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="<?php echo base_url('invoice_all/paket')?>">PAKET</a>
+            <a class="collapse-item" href="<?php echo base_url('invoice_all/homestay') ?>">HOMESTAY</a>
+            <a class="collapse-item" href="<?php echo base_url('invoice_all/transport') ?>">TRANSPORT</a>
+            <a class="collapse-item" href="<?php echo base_url('invoice_all/wisata') ?>">WISATA</a>
+        </div>
+        </div>
+    </li>
+    <!--<li class="nav-item">
         <a class="nav-link" href="<?php echo base_url('data_pesanan')?>">
         <i class="fas fa-torii-gate"></i>
         <span>Transaksi</span></a>
-    </li>
+    </li>-->
 
-    <li class="nav-item">
+    <!--<li class="nav-item">
         <a class="nav-link" href="<?php echo base_url('Invoices')?>">
         <i class="fas fa-torii-gate"></i>
         <span>Transaksi ada Detail</span></a>
-    </li>
+    </li>-->
 
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
