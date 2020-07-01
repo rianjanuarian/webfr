@@ -19,6 +19,7 @@ class data_pesanan extends CI_Controller{
         $penerima      = $this->input->post('penerima');
         $alamat_rinci            = $this->input->post('alamat_rinci');
         $nohp_penerima = $this->input->post('nohp_penerima');
+        $status_bayar = $this->input->post('status_bayar');
 
         $data = array(
             'id_katalog'        => $id_katalog,
@@ -27,7 +28,8 @@ class data_pesanan extends CI_Controller{
             'tgl_berangkat'          => $tgl_berangkat,
             'penerima'          => $penerima,
             'alamat_rinci'          => $alamat_rinci,
-            'nohp_penerima'          => $nohp_penerima
+            'nohp_penerima'          => $nohp_penerima,
+            'status_bayar'          => $status_bayar
 
         );
 
@@ -55,6 +57,7 @@ class data_pesanan extends CI_Controller{
         $penerima      = $this->input->post('penerima');
         $alamat_rinci            = $this->input->post('alamat_rinci');
         $nohp_penerima = $this->input->post('nohp_penerima');
+        $status_bayar = $this->input->post('status_bayar');
 
         $data=array(
             'id_transaksi'          => $id_transaksi,
@@ -64,7 +67,8 @@ class data_pesanan extends CI_Controller{
             'tgl_berangkat'          => $tgl_berangkat,
             'penerima'          => $penerima,
             'alamat_rinci'          => $alamat_rinci,
-            'nohp_penerima'          => $nohp_penerima
+            'nohp_penerima'          => $nohp_penerima,
+            'status_bayar'      => $status_bayar
         );
 
         $where = array(

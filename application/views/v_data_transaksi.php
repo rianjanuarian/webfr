@@ -10,7 +10,8 @@
             <th>tgl_berangkat</th>
             <th>penerima</th>
             <th>alamat_rinci</th>
-            <th>nohp_penerima</th>
+            <th>NO HP Penerima</th>
+            <th>Status Bayar</th>
             <th>Aksi</th>
         </tr>
 
@@ -25,7 +26,16 @@
                 <td><?= $adm->penerima ?></td>
                 <td><?= $adm->alamat_rinci ?></td>
                 <td><?= $adm->nohp_penerima ?></td>
+                <td><?php 
+                    if($adm->status_bayar=="0"){
+                        echo "<span class='badge badge-danger'> Tidak Bayar</span>";
+                    }else{
+                        echo "<span class='badge badge-primary'> Bayar</span>";
+                    }
+                ?></td>
                 <td>
+                    <?php echo anchor('data_pesanan/edit/' .$adm->id_transaksi, '<div class="btn btn-primary btn-sm">
+                    <i class="fa fa-edit"></i></div>')?>
         
                     <?php echo anchor('data_pesanan/hapus/' .$adm->id_transaksi, '<div class="btn btn-danger btn-sm">
                     <i class="fa fa-trash"></i></div>')?>
