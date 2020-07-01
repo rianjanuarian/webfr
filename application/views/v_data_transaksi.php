@@ -3,12 +3,12 @@
     <table class="table table-bordered">
         <tr>
             <th>NO</th>
-            <th>Id Transaksi</th>
+            <th>Id Transaksi</th> 
             <th>ID Katalog</th>
             <th>ID Pelanggan</th>
             <th>Tanggal Transaksi</th>
             <th>TanggaL Berangkat</th>
-            <th>penerima</th>
+            <th>Penerima</th>
             <th>Alamat Rinci</th>
             <th>NO HP Penerima</th>
             <th>Status Bayar</th>

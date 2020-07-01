@@ -25,12 +25,12 @@
 
                     <div class="form-group">
                     <label for="tgl_transaksi">Tanggal Transaksi</label>
-                        <input type="text" name="tgl_transaksi" class="form-control" value="<?php echo $inp->tgl_transaksi ?>">
+                        <input type="date" name="tgl_transaksi" class="form-control" value="<?php echo $inp->tgl_transaksi ?>">
                     </div>
                 
                     <div class='form-group'>
                         <label for="tgl_berangkat">Tanggal Berangkat</label>
-                        <input type="text" name="tgl_berangkat" class="form-control" value="<?php echo $inp->tgl_berangkat ?>">
+                        <input type="date" name="tgl_berangkat" class="form-control" value="<?php echo $inp->tgl_berangkat ?>">
                     </div>
 
                     <div class='form-group'>
