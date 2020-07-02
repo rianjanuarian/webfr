@@ -3,7 +3,7 @@
     <?php foreach($katalog as $adm): ?>
         <form method="post" action="<?php echo base_url().'data_paket/update_paket'?>">
             <div class="form-group">
-                <input type="hidden" name="nama_katalog" class="form-control" value="<?php echo $adm->nama_katalog ?>">
+                <input type="text" name="nama_katalog" class="form-control" value="<?php echo $adm->nama_katalog ?>">
             </div>
             
             <div class="form-group">

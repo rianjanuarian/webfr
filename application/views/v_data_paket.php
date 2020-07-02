@@ -35,8 +35,10 @@
                     }
                 ?></td>
                 <td>
+                <!--
+                <div>
                 <?php echo anchor('data_paket/edit/' .$pkt->id_katalog, '<div class="btn btn-primary btn-sm">
-                    <i class="fa fa-edit"></i></div>')?>
+                    <i class="fa fa-edit"></i></div>')?></div>-->
         
                     <?php echo anchor('data_paket/hapus/' .$pkt->id_katalog, '<div class="btn btn-danger btn-sm">
                     <i class="fa fa-trash"></i></div>')?>

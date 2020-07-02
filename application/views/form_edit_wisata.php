@@ -1,7 +1,7 @@
 <div class="main-content">
 <section class="section">
     <div class="section-header">
-        <h1>Form Edit Data Penginapan</h1>
+        <h1>Form Edit Data Wisata</h1>
     </div>
     <div class="card">
         <div class="card-body">
