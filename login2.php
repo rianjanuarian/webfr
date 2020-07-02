@@ -11,7 +11,7 @@
  $password = $_POST['password'];
 
  //Creating sql query
- $sql = "SELECT * FROM pelanggan WHERE username='$username' AND password='$password'";
+ $sql = "SELECT id_pelanggan,username,password FROM pelanggan WHERE username='$username' AND password='$password'";
 
  //executing query
  $result = mysqli_query($con,$sql);
