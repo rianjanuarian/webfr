@@ -1,7 +1,7 @@
 <div class="main-content">
 <section class="section">
     <div class="section-header">
-        <h1>Form Edit Data Transaksi Transport</h1>
+        <h1>Form Edit Data Transaksi Wisata</h1>
     </div>
     <div class="card">
         <div class="card-body">
@@ -15,12 +15,12 @@
 
                     <div class="form-group">
                         <label for="id_wisata">ID Wisata</label>
-                        <input type="text" name="id_wisata" class="form-control" readonly value="<?php echo $wis->id_wisata ?>">
+                        <input type="text" name="id_wisata" class="form-control" value="<?php echo $wis->id_wisata ?>">
                     </div>
 
                     <div class="form-group">
                         <label for="id_pelanggan">ID Pelanggan</label>
-                        <input type="text" name="id_pelanggan" class="form-control" readonly value="<?php echo $wis->id_pelanggan ?>">
+                        <input type="text" name="id_pelanggan" class="form-control" value="<?php echo $wis->id_pelanggan ?>">
                     </div>
 
                     <div class="form-group">

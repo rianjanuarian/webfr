@@ -23,19 +23,23 @@
                       <input type="text" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Masukkan Username Anda..." name="username">
                       <?php echo form_error('username', '<div class="text-danger small ml-2">','</div>'); ?>
                     </div>
+              
                     <div class="form-group">
                       <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Masukkan Password..." name="password">
                       <?php echo form_error('password', '<div class="text-danger small ml-2">','</div>'); ?>
                     </div>
+                    <br>
+                    <br>
                     <button type="submit" class="btn btn-primary btn-user btn-block" form-control>LOGIN</button>
                   </form>
                   <hr>
+                  <!--
                   <div class="text-center">
                     <a class="small" href="forgot-password.html">Forgot Password?</a>
                   </div>
                   <div class="text-center">
                     <a class="small" href="register.html">Buat Akun</a>
-                  </div>
+                  </div>-->
                 </div>
               </div>
             </div>

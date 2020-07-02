@@ -25,7 +25,7 @@ class Auth extends CI_Controller{
                 redirect('auth/login');
             }else{
                 $this->session->set_userdata('username',$auth->username);
-                redirect('dashboard');
+                redirect('data_admin');
             }
         }
     }

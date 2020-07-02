@@ -15,12 +15,12 @@
 
                     <div class="form-group">
                         <label for="id_hotel">ID Homestay</label>
-                        <input type="text" name="id_hotel" class="form-control" readonly value="<?php echo $inp->id_hotel ?>">
+                        <input type="text" name="id_hotel" class="form-control" value="<?php echo $inp->id_hotel ?>">
                     </div>
 
                     <div class="form-group">
                         <label for="id_pelanggan">ID Pelanggan</label>
-                        <input type="text" name="id_pelanggan" class="form-control" readonly value="<?php echo $inp->id_pelanggan ?>">
+                        <input type="text" name="id_pelanggan" class="form-control" value="<?php echo $inp->id_pelanggan ?>">
                     </div>
 
                     <div class="form-group">

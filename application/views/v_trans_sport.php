@@ -1,5 +1,5 @@
 <div class="container-fluid">
-
+<h2>TRANSAKSI TRANSPORTASI</h2>
     <table class="table table-bordered">
         <tr>
             <th>NO</th>

@@ -15,12 +15,12 @@
 
                     <div class="form-group">
                         <label for="id_transport">ID Transport</label>
-                        <input type="text" name="id_transport" class="form-control" readonly value="<?php echo $trsnprt->id_transport ?>">
+                        <input type="text" name="id_transport" class="form-control" value="<?php echo $trsnprt->id_transport ?>">
                     </div>
 
                     <div class="form-group">
                         <label for="id_pelanggan">ID Pelanggan</label>
-                        <input type="text" name="id_pelanggan" class="form-control" readonly value="<?php echo $trsnprt->id_pelanggan ?>">
+                        <input type="text" name="id_pelanggan" class="form-control" value="<?php echo $trsnprt->id_pelanggan ?>">
                     </div>
 
                     <div class="form-group">
