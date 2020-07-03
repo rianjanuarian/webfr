@@ -12,9 +12,9 @@
             <th>Username</th>
             <th>Alamat</th>
             <th>Gender</th>
-            <th>no_telepon</th>
-            <th>no_identitas</th>
-            <th>password</th>
+            <th>No Telepon</th>
+            <th>No Identitas</th>
+            <th>Password</th>
             <th>Aksi</th>
         </tr>
 

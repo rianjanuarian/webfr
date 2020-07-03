@@ -63,7 +63,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								<li class="main_nav_item"><a href="<?php echo base_url('about') ?>">Hotel</a></li>
 								<li class="main_nav_item"><a href="<?php echo base_url('transport') ?>">Transport</a></li>
 								<li class="main_nav_item"><a href="<?php echo base_url('wisata') ?>">Wisata</a></li>
-								<li class="main_nav_item"><a href="<?php echo base_url('pricing') ?>">Katalog</a></li>
+								<li class="main_nav_item"><a href="<?php echo base_url('katalog') ?>">Katalog</a></li>
 								<li class="main_nav_item"><a href="<?php echo base_url('') ?>">Contact</a></li>
 								
 							
