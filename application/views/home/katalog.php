@@ -37,12 +37,12 @@
 		<div class="container">
 			<div class="row">
 				<div class="col text-center">
-					<h2 class="section_title">Daftar katalog</h2>
+					<h2 class="section_title">Daftar Paket</h2>
 				</div>
 			</div>
 			<div class="row offers_items">
 
-<?php foreach ($gambar as $gbr) { ?>
+<?php foreach ($showall as $gbr) { ?>
 
 				<!-- Offers Item -->
 				<div class="col-lg-6 offers_col">
@@ -65,8 +65,10 @@
 										<i></i>
 										<i></i>
 									</div>
-									
-						
+									<p class="offers_text"><pre>Wisata: <?php echo $gbr->nama_wisata?></pre></p>
+                                    <p class="offers_text"><pre>Transportasi: <?php echo $gbr->nama_transport?></pre></p>
+                                    <p class="offers_text"><pre>Penginapan: <?php echo $gbr->nama_hotel?></pre></p>
+
 									<div class="offers_icons">
 										<ul class="offers_icons_list">
 											

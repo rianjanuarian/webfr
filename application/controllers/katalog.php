@@ -11,6 +11,8 @@ class katalog extends CI_Controller {
 
 	public function index()
 	{
+        $data['showall'] = $this->katalog_model->tampil_paket() ->result();
+
 		$data['page_title'] = 'List katalog';
 
         $limit_per_page = 20;

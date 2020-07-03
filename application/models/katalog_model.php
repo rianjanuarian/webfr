@@ -6,6 +6,16 @@ class katalog_model extends CI_Model {
     public $idData = 'id_katalog';
     public $order = 'DESC';
 
+    public function tampil_paket(){
+        $data= $this->db->query("SELECT id_katalog, nama_katalog, transport.nama_transport, penginapan.nama_hotel, wisata.nama_wisata, harga_katalog, status 
+        FROM katalog, penginapan, transport, wisata 
+        WHERE katalog.id_transport = transport.id_transport AND katalog.id_hotel=penginapan.id_hotel AND katalog.id_wisata=wisata.id_wisata");
+        return $data;
+        //return $this->db->get('katalog');
+        //return $this->db->get('transport');
+        //return $this->db->get('penginapan');
+        //return $this->db->get('wisata');
+    }
     function __construct()
     {
         parent::__construct();

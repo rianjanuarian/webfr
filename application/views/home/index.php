@@ -84,7 +84,7 @@
 			</div>
 		</div>		
 	</div>-->
-	<div class="offers">
+	<!-- <div class="offers">
 	<div class="container">
 		<div class="row">
 			<div class="col text-center">
@@ -136,6 +136,6 @@
 
 
 		</div>
-	</div>
+	</div> -->
 </div>
 <?php $this->load->view('template/footerHome'); ?>
