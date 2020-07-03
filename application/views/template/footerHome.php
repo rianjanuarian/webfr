@@ -8,12 +8,10 @@
 					<div class="footer_col">
 						<div class="footer_content footer_about">
 							<div class="logo_container footer_logo">
-								<div class="logo"><a href="#"><img src="images/logo.png" alt="">AAI</a></div>
+								<div class="logo"><a href="#"><img src="images/logo.png" alt="">PELITA</a></div>
 							</div>
-							<p class="footer_about_text">AAI Express Adalah Jasa Pengiriman Barang Yang Murah Dan Cepat.</p>
+							<p class="footer_about_text">PELITA (Pelayanan Wisata) Melayani Anda Sepenuh Hati.</p>
 							<ul class="footer_social_list">
-								<li class="footer_social_item"><a href="https://www.facebook.com/idris.cahyono"><i class="fa fa-facebook-f"></i></a></li>
-								<li class="footer_social_item"><a href="https://twitter.com/idriscahyonoo?lang=id"><i class="fa fa-twitter"></i></a></li>
 							</ul>
 						</div>
 					</div>
@@ -27,19 +25,19 @@
 							<ul class="contact_info_list">
 								<li class="contact_info_item d-flex flex-row">
 									<div><div class="contact_info_icon"><img src="images/placeholder.svg" alt=""></div></div>
-									<div class="contact_info_text">Jl Soekarno Hatta No 5 Malang</div>
+									<div class="contact_info_text">Jl MASTRIP NO 123 KAB.JEMBER, JAWA TIMUR</div>
 								</li>
 								<li class="contact_info_item d-flex flex-row">
 									<div><div class="contact_info_icon"><img src="images/phone-call.svg" alt=""></div></div>
-									<div class="contact_info_text">0351-443-443</div>
+									<div class="contact_info_text">0812345678912</div>
 								</li>
 								<li class="contact_info_item d-flex flex-row">
 									<div><div class="contact_info_icon"><img src="images/message.svg" alt=""></div></div>
-									<div class="contact_info_text"><a href="mailto:contactme@gmail.com?Subject=Hello" target="_top">csAAI@gmail.com</a></div>
+									<div class="contact_info_text"><a href="mailto:contactme@gmail.com?Subject=Hello" target="_top">PELITA@gmail.com</a></div>
 								</li>
 								<li class="contact_info_item d-flex flex-row">
 									<div><div class="contact_info_icon"><img src="images/planet-earth.svg" alt=""></div></div>
-									<div class="contact_info_text"><a href="https://colorlib.com">www.AAI.com</a></div>
+									<div class="contact_info_text"><a href="https://colorlib.com">www.PELITA.com</a></div>
 								</li>
 							</ul>
 						</div>
@@ -58,19 +56,13 @@
 				<div class="col-lg-3 order-lg-1 order-2  ">
 					<div class="copyright_content d-flex flex-row align-items-center">
 						<div><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | By <a href="https://facebook.com" target="_blank">Idris Cahyono</a>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | By PELITA
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></div>
 					</div>
 				</div>
 				<div class="col-lg-9 order-lg-2 order-1">
 					<div class="footer_nav_container d-flex flex-row align-items-center justify-content-lg-end">
 						<div class="footer_nav">
-							<ul class="footer_nav_list">
-								<li class="footer_nav_item"><a href="<?php echo base_url('home') ?>">Home</a></li>
-								<li class="footer_nav_item"><a href="<?php echo base_url('about') ?>">Daftar Pegawai</a></li>
-								<li class="footer_nav_item"><a href="<?php echo base_url('pricing') ?>">Register</a></li>
-								<li class="footer_nav_item"><a href="<?php echo base_url('Contact') ?>">Contact</a></li>
-							</ul>
 						</div>
 					</div>
 				</div>

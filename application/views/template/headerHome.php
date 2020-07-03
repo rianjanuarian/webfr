@@ -32,7 +32,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<div class="container">
 				<div class="row">
 					<div class="col d-flex flex-row">
-						<div class="phone">+0351-443-443</div>
+						<div class="phone">0812345678912</div>
 						<div class="social">
 							<ul class="social_list">
 								<li class="social_list_item"><a href="https://www.facebook.com/idris.cahyono"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
@@ -40,8 +40,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							</ul>
 						</div>
 						<div class="user_box ml-auto">
-							<div class="user_box_login user_box_link"><a href="<?php echo base_url('auth/login')?>">login</a></div>
-							<div class="user_box_register user_box_link"><a href="<?php echo base_url('pricing') ?>">register</a></div>
+							<div class="user_box_login user_box_link"><a href="<?php echo base_url('auth/login')?>">Login (Admin)</a></div>
+							
 						</div>
 					</div>
 				</div>
@@ -64,7 +64,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								<li class="main_nav_item"><a href="<?php echo base_url('transport') ?>">Transport</a></li>
 								<li class="main_nav_item"><a href="<?php echo base_url('wisata') ?>">Wisata</a></li>
 								<li class="main_nav_item"><a href="<?php echo base_url('katalog') ?>">Katalog</a></li>
-								<li class="main_nav_item"><a href="<?php echo base_url('') ?>">Contact</a></li>
+								<!--<li class="main_nav_item"><a href="<?php echo base_url('') ?>">Contact</a></li>-->
 								
 							
 							</ul>
